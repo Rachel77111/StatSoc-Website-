@@ -2,7 +2,8 @@ import { useRef, useState } from 'react';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView } from 'motion/react';
 import { Calendar, Briefcase, BarChart2, BookOpen, ArrowRight, Mail, Quote, ExternalLink } from 'lucide-react';
-import { newsletter } from '@/content/newsletter';
+import newsletterContent from '../../content/newsletter.json';
+import { useCmsContent } from '@/lib/use-cms-content';
 
 const iconMap: Record<string, React.ReactNode> = {
   Calendar:  <Calendar  size={22} />,
@@ -16,6 +17,13 @@ const tagColours: Record<string, { bg: string; text: string }> = {
   Workshop:   { bg: 'hsl(var(--accent))', text: '#fff' },
   Networking: { bg: 'hsl(var(--primary))', text: 'hsl(var(--secondary))' },
   Careers:    { bg: 'hsl(var(--secondary))', text: '#fff' },
+};
+
+type NewsletterIssue = { id: string; tag: string; date: string; title: string; preview: string; href?: string };
+type NewsletterQuote = { id: string; text: string; name: string; year: string };
+type NewsletterContent = Omit<typeof newsletterContent, 'socialProof' | 'archive'> & {
+  socialProof: { heading: string; quotes: NewsletterQuote[] };
+  archive: { heading: string; description: string; issues: NewsletterIssue[] };
 };
 
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -35,6 +43,7 @@ function FadeIn({ children, delay = 0, className = '' }: { children: React.React
 }
 
 export default function NewsletterPage() {
+  const newsletter = useCmsContent<NewsletterContent>('newsletter', newsletterContent);
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -118,7 +127,7 @@ export default function NewsletterPage() {
             <h2 className="text-2xl font-extrabold mb-2" style={{ color: 'hsl(var(--secondary))' }}>
               {newsletter.subscribeSection.heading}
             </h2>
-            <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
+              <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
               {newsletter.subscribeSection.description}
             </p>
 
@@ -136,8 +145,8 @@ export default function NewsletterPage() {
                 >
                   <Mail size={22} style={{ color: 'hsl(var(--secondary))' }} />
                 </div>
-                <p className="font-bold text-lg mb-1" style={{ color: 'hsl(var(--secondary))' }}>You're on the list!</p>
-                <p className="text-muted-foreground text-sm">Check your inbox for a confirmation email.</p>
+                <p className="font-bold text-lg mb-1" style={{ color: 'hsl(var(--secondary))' }}>{newsletter.subscribeSection.successHeading}</p>
+                <p className="text-muted-foreground text-sm">{newsletter.subscribeSection.successBody}</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -146,7 +155,7 @@ export default function NewsletterPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your.name@student.sydney.edu.au"
+                  placeholder={newsletter.subscribeSection.emailPlaceholder}
                   className="flex-1 px-4 py-3 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                   aria-label="Email address"
                 />
@@ -271,13 +280,13 @@ export default function NewsletterPage() {
                         </h3>
                         <p className="text-muted-foreground text-xs leading-relaxed">{issue.preview}</p>
                       </div>
-                      <div
+                      <a href={issue.href}
                         className="flex-shrink-0 flex items-center gap-1.5 text-xs font-semibold transition-all duration-200 group-hover:gap-2.5"
                         style={{ color: 'hsl(var(--primary))' }}
                       >
                         <ExternalLink size={13} />
-                        <span>Read issue</span>
-                      </div>
+                        <span>{newsletter.labels.readIssue}</span>
+                      </a>
                     </div>
                   </FadeIn>
                 );
@@ -310,17 +319,17 @@ export default function NewsletterPage() {
               ))}
             </div>
             <div className="relative max-w-lg mx-auto px-6">
-              <h2 className="text-3xl font-extrabold text-white mb-3">Ready to stay in the loop?</h2>
-              <p className="text-white/55 text-sm mb-8">Join hundreds of stats students getting the best of StatSoc delivered fortnightly.</p>
+              <h2 className="text-3xl font-extrabold text-white mb-3">{newsletter.bottomCta.heading}</h2>
+              <p className="text-white/55 text-sm mb-8">{newsletter.bottomCta.body}</p>
               <motion.a
-                href="#top"
+                href={newsletter.bottomCta.href}
                 onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm shadow-lg cursor-pointer"
                 style={{ background: 'hsl(var(--primary))', color: 'hsl(var(--secondary))' }}
               >
-                Subscribe now <ArrowRight size={15} />
+                {newsletter.bottomCta.button} <ArrowRight size={15} />
               </motion.a>
             </div>
           </section>

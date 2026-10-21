@@ -23,7 +23,7 @@ export function useJsonLdSiteUrl(): string {
   if (typeof window !== 'undefined') {
     return window.location.origin;
   }
-  const fromEnv: string = import.meta.env.VITE_PUBLIC_URL;
+  const fromEnv = import.meta.env.VITE_PUBLIC_URL;
   if (fromEnv) {
     return fromEnv.replace(/\/$/, '');
   }

@@ -13,69 +13,20 @@ import {
   Sparkles,
   Video,
 } from 'lucide-react';
-import { membership } from '@/content/membership';
+import membershipContent from '../../content/membership.json';
+import { useCmsContent } from '@/lib/use-cms-content';
 
-const steps = [
-  {
-    title: 'Visit the USU website',
-    shortTitle: 'Visit USU',
-    icon: ExternalLink,
-    image: '/images/membership-steps/visit-usu.svg',
-    imageAlt: 'Illustration of a student opening the USU website on a laptop',
-    body: 'Go to usu.edu.au and select the account icon in the top-right corner, then choose Login.',
-    action: 'Open usu.edu.au',
-    href: 'https://usu.edu.au/',
-  },
-  {
-    title: 'Log in to your USU account',
-    shortTitle: 'Log in',
-    icon: CircleUserRound,
-    image: '/images/membership-steps/login.svg',
-    imageAlt: 'Illustration of signing in to a student account using a verification code',
-    body: "Enter your mobile number or USU member ID, then verify your identity with the code sent to you. New to USU? Choose Join USU to register first.",
-  },
-  {
-    title: 'Access the Clubs platform',
-    shortTitle: 'Clubs',
-    icon: ExternalLink,
-    image: '/images/membership-steps/clubs.svg',
-    imageAlt: 'Illustration of navigating from the USU site to its clubs platform',
-    body: 'Open the Clubs section and select Proceed to MyUSU. You will be redirected to the USU clubs platform.',
-  },
-  {
-    title: 'Find StatSoc',
-    shortTitle: 'Find StatSoc',
-    icon: Search,
-    image: '/images/membership-steps/find-statsoc.svg',
-    imageAlt: 'Illustration of searching for The University of Sydney Statistics Society',
-    body: 'Open Groups and search for “The University of Sydney Statistics Society”. Select StatSoc in the results to open our society profile.',
-  },
-  {
-    title: 'Join the society',
-    shortTitle: 'Join group',
-    icon: CheckCircle2,
-    image: '/images/membership-steps/join-group.svg',
-    imageAlt: 'Illustration of choosing a membership option and joining a student society',
-    body: 'On the StatSoc profile, click Join Group. Choose the available membership option from the dropdown, then click Join to continue.',
-  },
-  {
-    title: 'Confirm your membership',
-    shortTitle: 'Confirm',
-    icon: ShieldCheck,
-    image: '/images/membership-steps/confirmation.svg',
-    imageAlt: 'Illustration showing a successful membership confirmation',
-    body: 'Follow the prompts to confirm your details and complete registration. When you see “Thanks for joining!”, you are officially a StatSoc member!',
-  },
-];
-
-// MP4 version of the uploaded walkthrough for consistent browser support.
-const membershipVideo = {
-  title: 'How to join StatSoc through USU',
-  src: '/videos/membership-guide.mp4',
-  type: 'video/mp4',
+const stepIcons: Record<string, typeof ExternalLink> = {
+  ExternalLink,
+  User: CircleUserRound,
+  Search,
+  CheckCircle: CheckCircle2,
+  Shield: ShieldCheck,
 };
 
 export default function MembershipPage() {
+  const membership = useCmsContent('membership', membershipContent);
+  const steps = membership.steps.map((item) => ({ ...item, icon: stepIcons[item.icon] ?? ExternalLink }));
   const [activeStep, setActiveStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const [videoUnavailable, setVideoUnavailable] = useState(false);
@@ -107,7 +58,7 @@ export default function MembershipPage() {
               transition={{ duration: 0.4 }}
               className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-primary sm:text-sm"
             >
-              <Sparkles size={15} /> Free USU membership
+              <Sparkles size={15} /> {membership.heroBadge}
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -123,22 +74,20 @@ export default function MembershipPage() {
               transition={{ duration: 0.5, delay: 0.12 }}
               className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg"
             >
-              {membership.subheading} Follow the guide below and you’ll be part of our community in just a few steps.
+              {membership.subheading} {membership.heroContinuation}
             </motion.p>
             <motion.a
-              href="https://usu.edu.au/"
+              href={membership.startHref}
               target="_blank"
               rel="noreferrer"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-extrabold text-secondary shadow-lg shadow-black/10 sm:px-7 sm:text-base"
             >
-              Start at USU <ArrowRight size={17} />
+              {membership.startButton} <ArrowRight size={17} />
             </motion.a>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-white/55 sm:text-sm">
-              <span className="inline-flex items-center gap-2"><Check size={15} className="text-primary" /> No-cost membership</span>
-              <span className="inline-flex items-center gap-2"><Check size={15} className="text-primary" /> About 2 minutes</span>
-              <span className="inline-flex items-center gap-2"><Check size={15} className="text-primary" /> Open to all students</span>
+              {membership.benefits.map((benefit) => <span key={benefit} className="inline-flex items-center gap-2"><Check size={15} className="text-primary" /> {benefit}</span>)}
             </div>
           </div>
         </section>
@@ -147,12 +96,12 @@ export default function MembershipPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <div className="mb-7 flex flex-col gap-4 sm:mb-9 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="mb-2 text-xs font-extrabold uppercase tracking-[0.16em] text-primary">Your quick-start guide</p>
-                <h2 className="text-2xl font-extrabold text-secondary sm:text-3xl">How to join StatSoc</h2>
+                <p className="mb-2 text-xs font-extrabold uppercase tracking-[0.16em] text-primary">{membership.guideEyebrow}</p>
+                <h2 className="text-2xl font-extrabold text-secondary sm:text-3xl">{membership.guideHeading}</h2>
               </div>
               <div className="w-full sm:max-w-52">
                 <div className="mb-2 flex justify-between text-xs font-semibold text-muted-foreground">
-                  <span>Your progress</span><span>{completedSteps.length} of {steps.length} complete</span>
+                  <span>{membership.progressLabel}</span><span>{completedSteps.length} of {steps.length} {membership.progressComplete}</span>
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-muted" role="progressbar" aria-label="Membership guide progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
                   <motion.div className="h-full rounded-full bg-primary" animate={{ width: `${progress}%` }} transition={{ duration: 0.35 }} />
@@ -209,7 +158,7 @@ export default function MembershipPage() {
                   </AnimatePresence>
                   <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-xs font-extrabold text-secondary shadow-sm">
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary">{activeStep + 1}</span>
-                    Step {activeStep + 1} of {steps.length}
+                    {membership.stepLabel} {activeStep + 1} of {steps.length}
                   </span>
                 </div>
                 <div className="flex flex-col justify-center p-5 sm:p-8 md:p-10">
@@ -227,11 +176,11 @@ export default function MembershipPage() {
                       onClick={() => toggleComplete(activeStep)}
                       className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-5 py-2.5 text-sm font-bold transition-colors ${completedSteps.includes(activeStep) ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-border text-secondary hover:border-primary'}`}
                     >
-                      <CheckCircle2 size={16} /> {completedSteps.includes(activeStep) ? 'Step completed' : 'Mark step complete'}
+                      <CheckCircle2 size={16} /> {completedSteps.includes(activeStep) ? membership.completedButton : membership.completeButton}
                     </button>
                     {activeStep < steps.length - 1 && (
                       <button type="button" onClick={() => setActiveStep((current) => current + 1)} className="inline-flex min-h-11 items-center justify-center gap-1 text-sm font-bold text-secondary transition-colors hover:text-primary">
-                        Next step <ChevronRight size={16} />
+                        {membership.nextButton} <ChevronRight size={16} />
                       </button>
                     )}
                   </div>
@@ -244,7 +193,7 @@ export default function MembershipPage() {
         <section className="bg-muted py-12 sm:py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <div className="mb-7 max-w-2xl">
-              <h2 className="text-2xl font-extrabold text-secondary sm:text-3xl">Membership video guide</h2>
+              <h2 className="text-2xl font-extrabold text-secondary sm:text-3xl">{membership.videoHeading}</h2>
             </div>
             <motion.article
               initial={{ opacity: 0, y: 16 }}
@@ -259,10 +208,10 @@ export default function MembershipPage() {
                   controls
                   playsInline
                   preload="metadata"
-                  aria-label={membershipVideo.title}
+                  aria-label={membership.videoTitle}
                   onError={() => setVideoUnavailable(true)}
                 >
-                  <source src={membershipVideo.src} type={membershipVideo.type} />
+                  <source src={membership.videoSrc} type="video/mp4" />
                   Your browser does not support embedded videos.
                 </video>
               ) : (
@@ -271,7 +220,7 @@ export default function MembershipPage() {
                   <div className="absolute -bottom-20 -right-8 h-56 w-56 rounded-full bg-accent/15" />
                   <div className="relative flex flex-col items-center px-6 text-center">
                     <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-secondary"><Video size={26} /></span>
-                    <span className="text-sm font-extrabold text-white">Video unavailable</span>
+                    <span className="text-sm font-extrabold text-white">{membership.videoUnavailable}</span>
                   </div>
                 </div>
               )}

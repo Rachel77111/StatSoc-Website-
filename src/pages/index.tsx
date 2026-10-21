@@ -3,12 +3,13 @@ import { Link } from 'react-router';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView } from 'motion/react';
 import { ArrowDown, ChevronRight, Calendar, Briefcase, Sparkles, Users } from 'lucide-react';
-import { home } from '@/content/home';
 import { useEventsContent } from '@/lib/use-events-content';
+import homeContent from '../../content/home.json';
+import { useCmsContent } from '@/lib/use-cms-content';
 import ScatterDots from '@/components/ScatterDots';
 
 // ─── Splash Screen ────────────────────────────────────────────────────────────
-function SplashScreen({ onScrollPast }: { onScrollPast: () => void }) {
+function SplashScreen({ onScrollPast, tagline, taglineScrollLabel }: { onScrollPast: () => void; tagline: string; taglineScrollLabel: string }) {
   const [visible, setVisible] = useState(true);
   const [opacity, setOpacity] = useState(1);
 
@@ -109,7 +110,7 @@ function SplashScreen({ onScrollPast }: { onScrollPast: () => void }) {
         transition={{ duration: 0.5, delay: 1.1 }}
         className="text-lg md:text-xl text-muted-foreground font-medium mb-16 text-center px-6"
       >
-        {home.splash.tagline}
+        {tagline}
       </motion.p>
 
       {/* Scroll indicator */}
@@ -119,7 +120,7 @@ function SplashScreen({ onScrollPast }: { onScrollPast: () => void }) {
         transition={{ delay: 1.5 }}
         className="absolute bottom-10 flex flex-col items-center gap-2"
       >
-        <span className="text-sm font-semibold text-muted-foreground tracking-wide">Scroll to explore</span>
+        <span className="text-sm font-semibold text-muted-foreground tracking-wide">{taglineScrollLabel}</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
@@ -246,8 +247,9 @@ const navIcons = [
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function HomePage() {
   const [splashDone, setSplashDone] = useState(false);
+  const home = useCmsContent('home', homeContent);
   const eventContent = useEventsContent();
-  const upcomingEvents = eventContent.events.length > 0 ? eventContent.events : home.events.items;
+  const upcomingEvents = eventContent.events;
 
   return (
     <>
@@ -263,7 +265,7 @@ export default function HomePage() {
       </Helmet>
 
       {/* Splash */}
-      <SplashScreen onScrollPast={() => setSplashDone(true)} />
+      <SplashScreen onScrollPast={() => setSplashDone(true)} tagline={home.splash.tagline} taglineScrollLabel={home.splash.scrollLabel} />
 
       {/* Spacer so content starts below splash */}
       <div className={`transition-opacity duration-500 ${splashDone ? 'opacity-100' : 'opacity-0'}`}>
@@ -287,7 +289,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6"
                 style={{ background: 'hsl(var(--primary)/0.2)', color: 'hsl(var(--secondary))' }}
               >
-                <span>🎓</span> University of Sydney
+                <span>🎓</span> {home.hero.eyebrow}
               </motion.div>
 
               <motion.h1
@@ -316,7 +318,7 @@ export default function HomePage() {
                 className="flex flex-wrap gap-4"
               >
                 <Link
-                  to="/membership"
+                  to={home.hero.primaryHref}
                   className="px-8 py-3.5 rounded-full font-bold text-base transition-all duration-200 hover:scale-105 hover:shadow-lg"
                   style={{
                     background: 'hsl(var(--primary))',
@@ -324,14 +326,14 @@ export default function HomePage() {
                     boxShadow: '0 4px 16px hsl(var(--primary)/0.4)',
                   }}
                 >
-                  Join StatSoc
+                  {home.hero.primaryButton}
                 </Link>
                 <Link
-                  to="/events"
+                  to={home.hero.secondaryHref}
                   className="px-8 py-3.5 rounded-full font-bold text-base border-2 transition-all duration-200 hover:scale-105 flex items-center gap-2"
                   style={{ borderColor: 'hsl(var(--secondary))', color: 'hsl(var(--secondary))' }}
                 >
-                  See Events <ChevronRight size={16} />
+                  {home.hero.secondaryButton} <ChevronRight size={16} />
                 </Link>
               </motion.div>
             </div>
@@ -383,19 +385,19 @@ export default function HomePage() {
                 </p>
               ))}
               <Link
-                to="/membership"
+                to={home.intro.buttonHref}
                 className="inline-flex items-center gap-2 mt-4 font-bold text-base transition-all duration-200 hover:gap-3"
                 style={{ color: 'hsl(var(--primary))' }}
               >
-                Become a member <ChevronRight size={18} />
+                {home.intro.button} <ChevronRight size={18} />
               </Link>
             </FadeInSection>
 
             <FadeInSection delay={0.15}>
               <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3]">
                 <img
-                  src="/airo-assets/images/pages/home/students-collab"
-                  alt="StatSoc members collaborating"
+                  src={home.intro.image}
+                  alt={home.intro.imageAlt}
                   className="w-full h-full object-cover"
                   loading="lazy"
                   width={800}
@@ -417,7 +419,7 @@ export default function HomePage() {
             <FadeInSection className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
                 <p className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: 'hsl(var(--primary))' }}>
-                  {home.events.subheading}
+                  {home.events.eyebrow}
                 </p>
                 <h2 className="text-3xl md:text-4xl font-extrabold" style={{ color: 'hsl(var(--secondary))' }}>
                   {home.events.heading}
@@ -428,7 +430,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 font-bold text-base shrink-0 transition-all duration-200 hover:gap-3"
                 style={{ color: 'hsl(var(--secondary))' }}
               >
-                See all events <ChevronRight size={18} />
+                {home.events.allButton} <ChevronRight size={18} />
               </Link>
             </FadeInSection>
 
@@ -469,7 +471,7 @@ export default function HomePage() {
                           <h3 className="mb-1.5 line-clamp-1 font-extrabold text-secondary sm:text-lg">{event.title}</h3>
                           <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">{event.description}</p>
                           <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-secondary transition-colors group-hover:text-primary">
-                            Event details <ChevronRight size={14} />
+                            {home.events.detailsLabel} <ChevronRight size={14} />
                           </span>
                         </div>
                       </motion.article>
@@ -481,8 +483,8 @@ export default function HomePage() {
               <FadeInSection>
                 <div className="rounded-3xl border border-dashed border-border bg-white/70 px-6 py-10 text-center">
                   <Calendar className="mx-auto mb-3 text-primary" size={25} />
-                  <p className="font-bold text-secondary">We’re planning what’s next</p>
-                  <p className="mt-1 text-sm text-muted-foreground">Upcoming StatSoc events will appear here as soon as they’re announced.</p>
+                  <p className="font-bold text-secondary">{home.events.emptyHeading}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{home.events.emptyBody}</p>
                 </div>
               </FadeInSection>
             )}
@@ -554,7 +556,7 @@ export default function HomePage() {
                       className="inline-flex items-center gap-2 mt-6 font-bold text-sm"
                       style={{ color: 'hsl(var(--primary))' }}
                     >
-                      Explore <ChevronRight size={16} />
+                      {home.navCards.exploreLabel} <ChevronRight size={16} />
                     </div>
                   </motion.div>
                 </FadeInSection>
@@ -572,13 +574,13 @@ export default function HomePage() {
             <ScatterDots count={16} color="hsl(var(--secondary)/0.15)" />
             <div className="relative max-w-3xl mx-auto px-6 text-center">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ color: 'hsl(var(--secondary))' }}>
-                Ready to join the StatSoc family?
+                {home.cta.heading}
               </h2>
               <p className="text-lg mb-8" style={{ color: 'hsl(var(--secondary)/0.75)' }}>
-                Membership is free through USU. Sign up in two minutes and unlock events, opportunities, and a community that loves data as much as you do.
+                {home.cta.body}
               </p>
               <Link
-                to="/membership"
+                to={home.cta.href}
                 className="inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 hover:shadow-xl"
                 style={{
                   background: 'hsl(var(--secondary))',
@@ -586,7 +588,7 @@ export default function HomePage() {
                   boxShadow: '0 8px 24px hsl(var(--secondary)/0.3)',
                 }}
               >
-                Join StatSoc — it's free!
+                {home.cta.button}
               </Link>
             </div>
           </section>

@@ -1,4 +1,6 @@
 import { Link } from 'react-router';
+import globalContent from '../../../content/global.json';
+import { useCmsContent } from '@/lib/use-cms-content';
 
 function InstagramIcon() {
   return (
@@ -28,25 +30,11 @@ function FacebookIcon() {
   );
 }
 
-const footerLinks = {
-  Society: [
-    { label: 'Home', href: '/' },
-    { label: 'About StatSoc', href: '/#about' },
-    { label: 'Join Us', href: '/membership' },
-  ],
-  Explore: [
-    { label: 'Events', href: '/events' },
-    { label: 'Opportunities', href: '/opportunities' },
-    { label: 'Fun Stats', href: '/fun' },
-  ],
-  Connect: [
-    { label: 'Newsletter', href: '/newsletter' },
-    { label: 'USU Page', href: 'https://www.usu.edu.au', target: '_blank' },
-    { label: 'Contact Us', href: 'mailto:statsoc@sydney.edu.au' },
-  ],
-};
+const socialIcons = { Instagram: InstagramIcon, LinkedIn: LinkedInIcon, Facebook: FacebookIcon };
 
 export default function Footer() {
+  const content = useCmsContent('global', globalContent);
+  const { footer } = content;
   return (
     <footer className="bg-secondary text-secondary-foreground">
       {/* Yellow wave divider */}
@@ -64,44 +52,30 @@ export default function Footer() {
               <span className="text-2xl font-extrabold" style={{ color: 'hsl(var(--primary))' }}>StatSoc</span>
             </div>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed mb-6">
-              Statistics Society of the University of Sydney. Where data meets community.
+              {footer.description}
             </p>
             {/* Social icons */}
             <div className="flex gap-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                className="p-2 rounded-full transition-all duration-200 hover:scale-110"
-                style={{ color: 'hsl(var(--primary))' }}
-                aria-label="Instagram">
-                <InstagramIcon />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                className="p-2 rounded-full transition-all duration-200 hover:scale-110"
-                style={{ color: 'hsl(var(--primary))' }}
-                aria-label="LinkedIn">
-                <LinkedInIcon />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                className="p-2 rounded-full transition-all duration-200 hover:scale-110"
-                style={{ color: 'hsl(var(--primary))' }}
-                aria-label="Facebook">
-                <FacebookIcon />
-              </a>
+              {footer.socialLinks.map((social) => {
+                const Icon = socialIcons[social.icon as keyof typeof socialIcons] ?? InstagramIcon;
+                return <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full transition-all duration-200 hover:scale-110" style={{ color: 'hsl(var(--primary))' }} aria-label={social.label}><Icon /></a>;
+              })}
             </div>
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+          {footer.columns.map((column) => (
+            <div key={column.title}>
               <h3 className="font-bold text-sm uppercase tracking-wider mb-4" style={{ color: 'hsl(var(--primary))' }}>
-                {category}
+                {column.title}
               </h3>
               <ul className="space-y-2">
-                {links.map((link) => (
+                {column.links.map((link) => (
                   <li key={link.label}>
-                    {'target' in link ? (
+                    {link.external ? (
                       <a
                         href={link.href}
-                        target={link.target}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors duration-200"
                       >
@@ -123,11 +97,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-secondary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-secondary-foreground/50 text-sm">
-            © 2026 StatSoc — University of Sydney. All rights reserved.
-          </p>
+          <p className="text-secondary-foreground/50 text-sm">{footer.copyright}</p>
           <p className="text-secondary-foreground/40 text-xs">
-            Made with 💛 by StatSoc
+            {footer.credit}
           </p>
         </div>
       </div>

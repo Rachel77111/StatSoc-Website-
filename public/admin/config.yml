@@ -1,0 +1,423 @@
+backend:
+  name: github
+  repo: Rachel77111/StatSoc-Website-
+  branch: main
+
+site_url: https://statsoc.sydney.edu.au
+display_url: https://statsoc.sydney.edu.au
+local_backend: false
+publish_mode: simple
+media_folder: public/uploads/events
+public_folder: /uploads/events
+locale: en
+show_preview_links: true
+
+collections:
+  - name: events_content
+    label: Events page
+    description: Edit upcoming events, past event summaries, galleries and Events page text.
+    files:
+      - name: events
+        label: Events and galleries
+        file: content/events.json
+        format: json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Heading, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: text }
+          - label: Category filters
+            name: filters
+            widget: list
+            summary: '{{fields.label}}'
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Value, name: value, widget: string }
+          - label: Upcoming events
+            name: events
+            widget: list
+            summary: '{{fields.date}} — {{fields.title}}'
+            fields:
+              - { label: ID, name: id, widget: string, hint: Keep this unique; it links to the matching event gallery if used. }
+              - { label: Event title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Date, name: date, widget: string, hint: "Example: 18 Nov 2026" }
+              - { label: Time, name: time, widget: string }
+              - { label: Location, name: location, widget: string }
+              - label: Category tag
+                name: tag
+                widget: select
+                options: [Social, Workshop, Careers, Networking, Competition, Panel]
+              - label: Category filter value
+                name: category
+                widget: select
+                options: [social, workshop, careers, networking]
+              - { label: Feature this event, name: featured, widget: boolean, default: false }
+              - { label: Card image, name: image, widget: image, required: false }
+          - { label: Past events heading, name: pastHeading, widget: string }
+          - { label: Past events introduction, name: pastSubheading, widget: text }
+          - label: Past events
+            name: pastEvents
+            widget: list
+            summary: '{{fields.date}} — {{fields.title}}'
+            fields:
+              - { label: ID, name: id, widget: string, hint: Must match the gallery ID below. }
+              - { label: Event title, name: title, widget: string }
+              - { label: Short description, name: description, widget: text }
+              - { label: Date, name: date, widget: string }
+              - label: Category tag
+                name: tag
+                widget: select
+                options: [Social, Workshop, Careers, Networking, Competition, Panel]
+          - label: Past event photo galleries
+            name: past_event_galleries
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Matching past event ID, name: id, widget: string }
+              - { label: URL slug, name: slug, widget: string, hint: Lowercase URL-safe text, for example welcome-social-2026 }
+              - { label: Gallery title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Date, name: date, widget: string }
+              - label: Category tag
+                name: tag
+                widget: select
+                options: [Social, Workshop, Careers, Networking, Competition, Panel]
+              - { label: Approx. attendees, name: attendees, widget: string, required: false }
+              - label: Photos
+                name: photos
+                widget: list
+                summary: '{{fields.alt}}'
+                fields:
+                  - { label: Photo image, name: src, widget: image }
+                  - { label: Alt text / caption, name: alt, widget: string }
+                  - label: Tile shape
+                    name: span
+                    widget: select
+                    options: [square, wide, tall]
+                    default: square
+          - label: Events page labels and links
+            name: pageLabels
+            widget: object
+            fields:
+              - { label: Filter badge, name: filterBadge, widget: string }
+              - { label: Upcoming events heading, name: upcomingHeading, widget: string }
+              - { label: Upcoming events introduction, name: upcomingDescription, widget: text }
+              - { label: No upcoming events heading, name: upcomingEmptyHeading, widget: string }
+              - { label: No upcoming events message, name: upcomingEmptyText, widget: text }
+              - { label: Past events eyebrow, name: pastEyebrow, widget: string }
+              - { label: Gallery button, name: galleryButton, widget: string }
+              - { label: Photo count suffix, name: galleryCountSuffix, widget: string }
+              - { label: Events CTA destination, name: ctaHref, widget: string }
+              - { label: Gallery back link, name: backToEvents, widget: string }
+              - { label: Gallery introduction, name: galleryDescriptionPrefix, widget: text }
+              - { label: Gallery heading, name: galleryHeading, widget: string }
+              - { label: Gallery helper text after photo count, name: gallerySelectionHint, widget: string }
+              - { label: Back CTA introduction, name: backCtaText, widget: string }
+              - { label: Back CTA button, name: backCtaButton, widget: string }
+              - { label: Event not found message, name: eventNotFound, widget: string }
+              - { label: Photo collage accessibility text, name: photoCollageAlt, widget: string }
+              - { label: Photo accessibility prefix, name: photoViewPrefix, widget: string }
+              - { label: Close photo viewer label, name: closePhoto, widget: string }
+              - { label: Previous photo button label, name: previousPhoto, widget: string }
+              - { label: Next photo button label, name: nextPhoto, widget: string }
+              - { label: Go to photo label prefix, name: goToPhotoPrefix, widget: string }
+          - label: Events page call-to-action
+            name: cta
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: body, widget: text }
+              - { label: Button text, name: button, widget: string }
+
+  - name: page_content
+    label: Website pages
+    description: Edit page text, images, links and repeatable lists. The layout and design stay fixed.
+    files:
+      - name: home
+        label: Homepage
+        file: content/home.json
+        format: json
+        fields:
+          - label: Splash screen
+            name: splash
+            widget: object
+            fields:
+              - { label: Tagline, name: tagline, widget: string }
+              - { label: Scroll prompt, name: scrollLabel, widget: string }
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Description, name: subheading, widget: text }
+              - { label: Primary button, name: primaryButton, widget: string }
+              - { label: Primary link, name: primaryHref, widget: string }
+              - { label: Secondary button, name: secondaryButton, widget: string }
+              - { label: Secondary link, name: secondaryHref, widget: string }
+              - label: Statistics
+                name: stats
+                widget: list
+                summary: '{{fields.value}} — {{fields.label}}'
+                fields:
+                  - { label: Value, name: value, widget: string }
+                  - { label: Label, name: label, widget: string }
+                  - { label: Internal ID (leave unchanged), name: id, widget: string }
+          - label: About section
+            name: intro
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Paragraphs
+                name: body
+                widget: list
+                summary: '{{fields.text}}'
+                fields:
+                  - { label: Paragraph, name: text, widget: text }
+                  - { label: Internal ID (leave unchanged), name: id, widget: string }
+              - { label: Photo, name: image, widget: image, media_folder: public/uploads/site, public_folder: /uploads/site }
+              - { label: Photo description for accessibility, name: imageAlt, widget: string }
+              - { label: Button text, name: button, widget: string }
+              - { label: Button link, name: buttonHref, widget: string }
+          - label: Events preview section
+            name: events
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: All events link text, name: allButton, widget: string }
+              - { label: Empty list heading, name: emptyHeading, widget: string }
+              - { label: Empty list text, name: emptyBody, widget: text }
+              - { label: Event details link label, name: detailsLabel, widget: string }
+          - label: Explore cards
+            name: navCards
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Card action text, name: exploreLabel, widget: string }
+              - label: Cards
+                name: items
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Link, name: href, widget: string }
+                  - { label: Internal ID (leave unchanged), name: id, widget: string }
+          - label: Bottom banner
+            name: cta
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: body, widget: text }
+              - { label: Button text, name: button, widget: string }
+              - { label: Button link, name: href, widget: string }
+
+      - name: membership
+        label: Membership page
+        file: content/membership.json
+        format: json
+        fields:
+          - { label: Page heading, name: heading, widget: string }
+          - { label: Introduction, name: subheading, widget: text }
+          - { label: Hero badge, name: heroBadge, widget: string }
+          - { label: Follow-up text, name: heroContinuation, widget: text }
+          - { label: Main button, name: startButton, widget: string }
+          - { label: Main button link, name: startHref, widget: string }
+          - { label: Benefits, name: benefits, widget: list, field: { label: Benefit, name: benefit, widget: string } }
+          - { label: Guide eyebrow, name: guideEyebrow, widget: string }
+          - { label: Guide heading, name: guideHeading, widget: string }
+          - { label: Progress label, name: progressLabel, widget: string }
+          - { label: Progress completion word, name: progressComplete, widget: string }
+          - { label: Step label, name: stepLabel, widget: string }
+          - { label: Mark complete button, name: completeButton, widget: string }
+          - { label: Completed button, name: completedButton, widget: string }
+          - { label: Next step button, name: nextButton, widget: string }
+          - label: Guide steps
+            name: steps
+            widget: list
+            summary: '{{fields.shortTitle}}'
+            fields:
+              - { label: Internal ID (leave unchanged), name: id, widget: string }
+              - { label: Step heading, name: title, widget: string }
+              - { label: Tab label, name: shortTitle, widget: string }
+              - label: Icon
+                name: icon
+                widget: select
+                options: [ExternalLink, User, Search, CheckCircle, Shield]
+              - { label: Illustration, name: image, widget: image, media_folder: public/uploads/site, public_folder: /uploads/site }
+              - { label: Illustration description, name: imageAlt, widget: string }
+              - { label: Instructions, name: body, widget: text }
+              - { label: Optional button text, name: action, widget: string, required: false }
+              - { label: Optional button link, name: href, widget: string, required: false }
+          - { label: Video section heading, name: videoHeading, widget: string }
+          - { label: Video title, name: videoTitle, widget: string }
+          - { label: Video file, name: videoSrc, widget: file, media_folder: public/uploads/site, public_folder: /uploads/site }
+          - { label: Video unavailable message, name: videoUnavailable, widget: string }
+
+      - name: newsletter
+        label: Newsletter page
+        file: content/newsletter.json
+        format: json
+        fields:
+          - label: Page heading
+            name: hero
+            widget: object
+            fields:
+              - { label: Heading, name: title, widget: string }
+              - { label: Description, name: subtitle, widget: text }
+          - label: Subscribe section
+            name: subscribeSection
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Button text, name: buttonLabel, widget: string }
+              - { label: Email placeholder, name: emailPlaceholder, widget: string }
+              - { label: Privacy note, name: privacyNote, widget: text }
+              - { label: Success heading, name: successHeading, widget: string }
+              - { label: Success message, name: successBody, widget: text }
+          - label: What is inside
+            name: whatsInside
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Items
+                name: items
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Internal ID (leave unchanged), name: id, widget: string }
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    options: [Calendar, Briefcase, BarChart2, BookOpen]
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+          - label: Community quotes
+            name: socialProof
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Quotes
+                name: quotes
+                widget: list
+                fields:
+                  - { label: Internal ID, name: id, widget: string }
+                  - { label: Quote, name: text, widget: text }
+                  - { label: Name, name: name, widget: string }
+                  - { label: Year or role, name: year, widget: string }
+          - label: Newsletter archive
+            name: archive
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Issues
+                name: issues
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Internal ID, name: id, widget: string }
+                  - { label: Category, name: tag, widget: string }
+                  - { label: Date, name: date, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Summary, name: preview, widget: text }
+                  - { label: Read link, name: href, widget: string, required: false }
+          - label: Bottom banner
+            name: bottomCta
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: body, widget: text }
+              - { label: Button text, name: button, widget: string }
+              - { label: Button link, name: href, widget: string }
+          - label: Display labels
+            name: labels
+            widget: object
+            fields:
+              - { label: Newsletter issue link label, name: readIssue, widget: string }
+
+      - name: opportunities
+        label: Opportunities page
+        file: content/opportunities.json
+        format: json
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Description, name: subheading, widget: text }
+          - { label: Icon or emoji, name: icon, widget: string }
+          - label: Opportunity links
+            name: items
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Link text, name: button, widget: string }
+              - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image, required: false, media_folder: public/uploads/site, public_folder: /uploads/site }
+
+      - name: fun
+        label: Fun page
+        file: content/fun.json
+        format: json
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Text, name: subheading, widget: text }
+          - { label: Optional image, name: image, widget: image, required: false, media_folder: public/uploads/site, public_folder: /uploads/site }
+          - { label: Image description, name: imageAlt, widget: string, required: false }
+
+      - name: global
+        label: Navigation and footer
+        file: content/global.json
+        format: json
+        fields:
+          - label: Header navigation
+            name: header
+            widget: object
+            fields:
+              - { label: Logo image, name: logo, widget: image, media_folder: public/uploads/site, public_folder: /uploads/site }
+              - { label: Logo description, name: logoAlt, widget: string }
+              - label: Navigation links
+                name: navigation
+                widget: list
+                summary: '{{fields.label}}'
+                fields:
+                  - { label: Link label, name: label, widget: string }
+                  - { label: Destination, name: href, widget: string }
+              - { label: Join button text, name: joinLabel, widget: string }
+              - { label: Join button link, name: joinHref, widget: string }
+          - label: Footer content
+            name: footer
+            widget: object
+            fields:
+              - { label: Description, name: description, widget: text }
+              - label: Social links
+                name: socialLinks
+                widget: list
+                fields:
+                  - { label: Name, name: label, widget: string }
+                  - { label: Link, name: href, widget: string }
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    options: [Instagram, LinkedIn, Facebook]
+              - label: Link columns
+                name: columns
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Column heading, name: title, widget: string }
+                  - label: Links
+                    name: links
+                    widget: list
+                    fields:
+                      - { label: Link label, name: label, widget: string }
+                      - { label: Destination, name: href, widget: string }
+                      - { label: Open in new tab, name: external, widget: boolean, default: false }
+              - { label: Copyright line, name: copyright, widget: string }
+              - { label: Footer credit, name: credit, widget: string }

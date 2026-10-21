@@ -3,7 +3,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion } from 'motion/react';
 import { Mail, Lock, LogIn, BarChart2, AlertCircle } from 'lucide-react';
 import { authClient } from '@/lib/auth/auth-client';
-import { admin_login } from 'virtual:content';
+import { admin_login } from '@/content/admin';
 
 // Google "G" SVG logo
 function GoogleIcon() {

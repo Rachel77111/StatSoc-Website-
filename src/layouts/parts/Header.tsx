@@ -2,16 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Events', href: '/events' },
-  { label: 'Opportunities', href: '/opportunities' },
-  { label: 'Fun Stats', href: '/fun' },
-  { label: 'Newsletter', href: '/newsletter' },
-];
+import globalContent from '../../../content/global.json';
+import { useCmsContent } from '@/lib/use-cms-content';
 
 export default function Header() {
+  const content = useCmsContent('global', globalContent);
+  const { header } = content;
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -32,15 +28,15 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 shrink-0">
           <img
-            src="/airo-assets/images/logo/horizontal"
-            alt="StatSoc Logo"
+            src={header.logo}
+            alt={header.logoAlt}
             className="block h-auto max-h-10 md:max-h-12 w-auto max-w-full object-contain self-center"
           />
         </Link>
 
         {/* Desktop Nav */}
         <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {header.navigation.map((link) => (
             <Link
               key={link.href}
               to={link.href}
@@ -59,11 +55,11 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            to="/membership"
+            to={header.joinHref}
             className="ml-2 px-5 py-2 rounded-full bg-primary text-secondary font-bold text-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
             style={{ boxShadow: '0 2px 8px hsl(var(--primary)/0.3)' }}
           >
-            Join Us
+            {header.joinLabel}
           </Link>
         </nav>
 
@@ -88,7 +84,7 @@ export default function Header() {
             className="md:hidden bg-white border-t border-border overflow-hidden"
           >
             <nav aria-label="Mobile navigation" className="flex flex-col px-6 py-4 gap-4">
-              {navLinks.map((link) => (
+              {header.navigation.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
@@ -99,11 +95,11 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                to="/membership"
+                to={header.joinHref}
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 px-5 py-2.5 rounded-full bg-primary text-secondary font-bold text-sm text-center transition-all duration-200 hover:scale-105"
               >
-                Join Us
+                {header.joinLabel}
               </Link>
             </nav>
           </motion.div>

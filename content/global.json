@@ -1,0 +1,30 @@
+{
+  "header": {
+    "logo": "/airo-assets/images/logo/horizontal",
+    "logoAlt": "StatSoc Logo",
+    "navigation": [
+      { "label": "Home", "href": "/" },
+      { "label": "Events", "href": "/events" },
+      { "label": "Opportunities", "href": "/opportunities" },
+      { "label": "Fun Stats", "href": "/fun" },
+      { "label": "Newsletter", "href": "/newsletter" }
+    ],
+    "joinLabel": "Join Us",
+    "joinHref": "/membership"
+  },
+  "footer": {
+    "description": "Statistics Society of the University of Sydney. Where data meets community.",
+    "socialLinks": [
+      { "label": "Instagram", "href": "https://instagram.com", "icon": "Instagram" },
+      { "label": "LinkedIn", "href": "https://linkedin.com", "icon": "LinkedIn" },
+      { "label": "Facebook", "href": "https://facebook.com", "icon": "Facebook" }
+    ],
+    "columns": [
+      { "title": "Society", "links": [{ "label": "Home", "href": "/" }, { "label": "About StatSoc", "href": "/#about" }, { "label": "Join Us", "href": "/membership" }] },
+      { "title": "Explore", "links": [{ "label": "Events", "href": "/events" }, { "label": "Opportunities", "href": "/opportunities" }, { "label": "Fun Stats", "href": "/fun" }] },
+      { "title": "Connect", "links": [{ "label": "Newsletter", "href": "/newsletter" }, { "label": "USU Page", "href": "https://www.usu.edu.au", "external": true }, { "label": "Contact Us", "href": "mailto:statsoc@sydney.edu.au", "external": true }] }
+    ],
+    "copyright": "© 2026 StatSoc — University of Sydney. All rights reserved.",
+    "credit": "Made with 💛 by StatSoc"
+  }
+}

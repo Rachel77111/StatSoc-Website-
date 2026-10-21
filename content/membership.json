@@ -1,0 +1,29 @@
+{
+  "heading": "Join StatSoc",
+  "subheading": "Become a StatSoc member through the University of Sydney Union (USU). Membership is free and only takes a few minutes!",
+  "heroBadge": "Free USU membership",
+  "heroContinuation": "Follow the guide below and you’ll be part of our community in just a few steps.",
+  "startButton": "Start at USU",
+  "startHref": "https://usu.edu.au/",
+  "benefits": ["No-cost membership", "About 2 minutes", "Open to all students"],
+  "guideEyebrow": "Your quick-start guide",
+  "guideHeading": "How to join StatSoc",
+  "progressLabel": "Your progress",
+  "progressComplete": "complete",
+  "stepLabel": "Step",
+  "completeButton": "Mark step complete",
+  "completedButton": "Step completed",
+  "nextButton": "Next step",
+  "videoHeading": "Membership video guide",
+  "videoTitle": "How to join StatSoc through USU",
+  "videoSrc": "/videos/membership-guide.mp4",
+  "videoUnavailable": "Video unavailable",
+  "steps": [
+    { "id": "visit-usu", "title": "Visit the USU website", "shortTitle": "Visit USU", "icon": "ExternalLink", "image": "/images/membership-steps/visit-usu.svg", "imageAlt": "Illustration of a student opening the USU website on a laptop", "body": "Go to usu.edu.au and select the account icon in the top-right corner, then choose Login.", "action": "Open usu.edu.au", "href": "https://usu.edu.au/" },
+    { "id": "login", "title": "Log in to your USU account", "shortTitle": "Log in", "icon": "User", "image": "/images/membership-steps/login.svg", "imageAlt": "Illustration of signing in to a student account using a verification code", "body": "Enter your mobile number or USU member ID, then verify your identity with the code sent to you. New to USU? Choose Join USU to register first.", "action": "", "href": "" },
+    { "id": "clubs", "title": "Access the Clubs platform", "shortTitle": "Clubs", "icon": "ExternalLink", "image": "/images/membership-steps/clubs.svg", "imageAlt": "Illustration of navigating from the USU site to its clubs platform", "body": "Open the Clubs section and select Proceed to MyUSU. You will be redirected to the USU clubs platform.", "action": "", "href": "" },
+    { "id": "find-statsoc", "title": "Find StatSoc", "shortTitle": "Find StatSoc", "icon": "Search", "image": "/images/membership-steps/find-statsoc.svg", "imageAlt": "Illustration of searching for The University of Sydney Statistics Society", "body": "Open Groups and search for “The University of Sydney Statistics Society”. Select StatSoc in the results to open our society profile.", "action": "", "href": "" },
+    { "id": "join", "title": "Join the society", "shortTitle": "Join group", "icon": "CheckCircle", "image": "/images/membership-steps/join-group.svg", "imageAlt": "Illustration of choosing a membership option and joining a student society", "body": "On the StatSoc profile, click Join Group. Choose the available membership option from the dropdown, then click Join to continue.", "action": "", "href": "" },
+    { "id": "confirm", "title": "Confirm your membership", "shortTitle": "Confirm", "icon": "Shield", "image": "/images/membership-steps/confirmation.svg", "imageAlt": "Illustration showing a successful membership confirmation", "body": "Follow the prompts to confirm your details and complete registration. When you see “Thanks for joining!”, you are officially a StatSoc member!", "action": "", "href": "" }
+  ]
+}

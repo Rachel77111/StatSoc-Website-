@@ -16,12 +16,37 @@ export interface EventsContent {
   pastSubheading: string;
   pastEvents: PastEventItem[];
   past_event_galleries: PastEventGallery[];
+  pageLabels: Record<string, string>;
   cta: { heading: string; body: string; button: string };
 }
 
 const fallbackContent: EventsContent = {
   ...fallbackEvents,
   past_event_galleries: fallbackPastGalleries,
+  pageLabels: {
+    filterBadge: 'All Events',
+    upcomingHeading: 'Upcoming Events',
+    upcomingDescription: 'Find your next favourite thing to do with StatSoc.',
+    upcomingEmptyHeading: 'New events are on the way',
+    upcomingEmptyText: 'Check back soon for the next StatSoc get-together.',
+    pastEyebrow: 'A look back',
+    galleryButton: 'View photo gallery',
+    galleryCountSuffix: 'photos',
+    ctaHref: '/newsletter',
+    backToEvents: 'Back to Events',
+    galleryDescriptionPrefix: 'A few moments from the day, captured by the StatSoc community.',
+    galleryHeading: 'Event Gallery',
+    gallerySelectionHint: 'moments — select a photo to explore the gallery',
+    backCtaText: "Want to see what's coming up next?",
+    backCtaButton: 'Back to all events',
+    eventNotFound: 'Event not found.',
+    photoCollageAlt: 'Event photo collage',
+    photoViewPrefix: 'View photo:',
+    closePhoto: 'Close photo viewer',
+    previousPhoto: 'Previous photo',
+    nextPhoto: 'Next photo',
+    goToPhotoPrefix: 'Go to photo',
+  },
 };
 
 /** Fetches the JSON document edited by Decap CMS; bundled content remains as fallback. */

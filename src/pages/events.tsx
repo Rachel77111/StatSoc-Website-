@@ -94,7 +94,7 @@ export default function EventsPage() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6"
               style={{ background: 'hsl(var(--primary)/0.15)', color: 'hsl(var(--primary))' }}
             >
-              <Calendar size={14} /> All Events
+              <Calendar size={14} /> {content.pageLabels.filterBadge}
             </motion.div>
 
             <motion.h1
@@ -141,9 +141,9 @@ export default function EventsPage() {
               <div>
                 <div className="flex items-center gap-3 mb-2">
                   <span className="w-1 h-8 rounded-full" style={{ background: 'hsl(var(--primary))' }} />
-                  <h2 className="text-2xl font-extrabold" style={{ color: 'hsl(var(--secondary))' }}>Upcoming Events</h2>
+                  <h2 className="text-2xl font-extrabold" style={{ color: 'hsl(var(--secondary))' }}>{content.pageLabels.upcomingHeading}</h2>
                 </div>
-                <p className="text-sm text-muted-foreground sm:ml-4">Find your next favourite thing to do with StatSoc.</p>
+                <p className="text-sm text-muted-foreground sm:ml-4">{content.pageLabels.upcomingDescription}</p>
               </div>
               <div className="hidden sm:flex items-center gap-2">
                 <button
@@ -221,8 +221,8 @@ export default function EventsPage() {
             ) : (
               <div className="rounded-3xl border border-dashed border-border bg-muted/40 px-6 py-12 text-center">
                 <Calendar className="mx-auto mb-3 text-primary" size={26} />
-                <p className="font-bold text-secondary">New events are on the way</p>
-                <p className="mt-1 text-sm text-muted-foreground">Check back soon for the next StatSoc get-together.</p>
+                <p className="font-bold text-secondary">{content.pageLabels.upcomingEmptyHeading}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{content.pageLabels.upcomingEmptyText}</p>
               </div>
             )}
           </div>
@@ -239,7 +239,7 @@ export default function EventsPage() {
                 </div>
                 <p className="text-sm text-muted-foreground sm:ml-4">{content.pastSubheading}</p>
               </div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">A look back</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{content.pageLabels.pastEyebrow}</span>
             </FadeIn>
 
             {content.pastEvents.length > 0 ? (
@@ -286,9 +286,9 @@ export default function EventsPage() {
                           <h3 className="mb-4 text-lg font-extrabold leading-snug text-secondary">{event.title}</h3>
                           <div className="flex items-center justify-between border-t border-border pt-4 text-xs font-bold text-secondary">
                             <span className="inline-flex items-center gap-2 text-primary">
-                              <Images size={15} /> View photo gallery
+                              <Images size={15} /> {content.pageLabels.galleryButton}
                             </span>
-                            <span className="text-muted-foreground">{gallery.photos.length} photos</span>
+                            <span className="text-muted-foreground">{gallery.photos.length} {content.pageLabels.galleryCountSuffix}</span>
                           </div>
                         </div>
                       </motion.article>
@@ -333,7 +333,7 @@ export default function EventsPage() {
                 {content.cta.body}
               </p>
               <Link
-                to="/newsletter"
+                to={content.pageLabels.ctaHref}
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-base transition-all duration-200 hover:scale-105 hover:shadow-xl"
                 style={{ background: 'hsl(var(--secondary))', color: 'white' }}
               >

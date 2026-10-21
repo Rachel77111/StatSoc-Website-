@@ -3,7 +3,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion } from 'motion/react';
 import { BarChart2, LogOut, Users, Calendar, Mail, ExternalLink, Shield } from 'lucide-react';
 import { useSession, authClient } from '@/lib/auth/auth-client';
-import { admin_dashboard } from '@/content/home';
+import { admin_dashboard } from '@/content/admin';
 
 export default function AdminDashboard() {
   const { session, isPending, isAuthenticated } = useSession();

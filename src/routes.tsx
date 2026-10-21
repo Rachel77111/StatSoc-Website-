@@ -9,8 +9,13 @@ import MembershipPage from './pages/membership';
 import NewsletterPage from './pages/newsletter';
 import NotFoundPage from './pages/_404';
 import FunPage from './pages/fun';
+import AdminEditorRedirect from './pages/admin/editor';
 
 export const routes: RouteObject[] = [
+  {
+    path: '/admin',
+    element: <AdminEditorRedirect />,
+  },
   {
     path: '/',
     element: <HomePage />,

@@ -30,7 +30,7 @@ function FadeIn({ children, delay = 0, className = '' }: { children: ReactNode; 
   );
 }
 
-function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries: ReturnType<typeof useEventsContent>['past_event_galleries'] }) {
+function GalleryView({ eventIndex, galleries, labels }: { eventIndex: number; galleries: ReturnType<typeof useEventsContent>['past_event_galleries']; labels: ReturnType<typeof useEventsContent>['pageLabels'] }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const gallery = galleries[eventIndex];
   const photoCount = gallery.photos.length;
@@ -94,7 +94,7 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
                 className="inline-flex items-center gap-2 text-sm font-semibold mb-8 transition-all duration-200 hover:gap-3"
                 style={{ color: 'hsl(var(--primary))' }}
               >
-                <ArrowLeft size={15} /> Back to Events
+                <ArrowLeft size={15} /> {labels.backToEvents}
               </Link>
             </motion.div>
 
@@ -127,7 +127,7 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
               transition={{ duration: 0.5, delay: 0.18 }}
               className="text-white/65 text-base leading-relaxed max-w-2xl"
             >
-              A few moments from the day, captured by the StatSoc community.
+              {labels.galleryDescriptionPrefix}
             </motion.p>
           </div>
         </section>
@@ -137,9 +137,9 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
           <div className="flex items-center gap-3">
             <span className="w-1 h-8 rounded-full" style={{ background: 'hsl(var(--primary))' }} />
             <div>
-              <h2 className="text-2xl font-extrabold" style={{ color: 'hsl(var(--secondary))' }}>Event Gallery</h2>
+              <h2 className="text-2xl font-extrabold" style={{ color: 'hsl(var(--secondary))' }}>{labels.galleryHeading}</h2>
               <p className="text-muted-foreground text-sm mt-0.5">
-                {gallery.photos.length} moments — select a photo to explore the gallery
+                {gallery.photos.length} {labels.gallerySelectionHint}
               </p>
             </div>
           </div>
@@ -158,7 +158,7 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
                   initial={{ opacity: 0, y: 18, scale: 0.98 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true, amount: 0.15 }}
-                  aria-label={`View photo: ${photo.alt}`}
+                  aria-label={`${labels.photoViewPrefix} ${photo.alt}`}
                 >
                   <img
                     src={photo.src}
@@ -186,13 +186,13 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
         {/* ── BACK CTA ── */}
         <FadeIn>
           <section className="py-16 text-center" style={{ background: 'hsl(var(--muted))' }}>
-            <p className="text-muted-foreground mb-5 text-sm">Want to see what's coming up next?</p>
+            <p className="text-muted-foreground mb-5 text-sm">{labels.backCtaText}</p>
             <Link
               to="/events"
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-sm transition-all duration-200 hover:scale-105 hover:shadow-lg"
               style={{ background: 'hsl(var(--secondary))', color: 'white' }}
             >
-              <ArrowLeft size={15} /> Back to all events
+              <ArrowLeft size={15} /> {labels.backCtaButton}
             </Link>
           </section>
         </FadeIn>
@@ -213,7 +213,7 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
             <button
               onClick={() => setLightboxIndex(null)}
               className="absolute top-5 right-5 w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors z-10"
-              aria-label="Close lightbox"
+              aria-label={labels.closePhoto}
             >
               <X size={22} className="text-white" />
             </button>
@@ -221,7 +221,7 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
             <button
               onClick={(e) => { e.stopPropagation(); setLightboxIndex((i) => i !== null ? (i - 1 + photoCount) % photoCount : null); }}
               className="absolute left-4 md:left-8 w-11 h-11 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors z-10"
-              aria-label="Previous photo"
+              aria-label={labels.previousPhoto}
             >
               <ChevronLeft size={26} className="text-white" />
             </button>
@@ -229,7 +229,7 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
             <button
               onClick={(e) => { e.stopPropagation(); setLightboxIndex((i) => i !== null ? (i + 1) % photoCount : null); }}
               className="absolute right-4 md:right-8 w-11 h-11 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors z-10"
-              aria-label="Next photo"
+              aria-label={labels.nextPhoto}
             >
               <ChevronRight size={26} className="text-white" />
             </button>
@@ -263,7 +263,7 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
                       height: 6,
                       background: i === lightboxIndex ? 'hsl(var(--primary))' : 'hsl(var(--primary)/0.25)',
                     }}
-                    aria-label={`Go to photo ${i + 1}`}
+                    aria-label={`${labels.goToPhotoPrefix} ${i + 1}`}
                   />
                 ))}
               </div>
@@ -277,13 +277,14 @@ function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries:
 
 export default function PastEventPage() {
   const { slug } = useParams<{ slug: string }>();
-  const { past_event_galleries: galleries } = useEventsContent();
+  const content = useEventsContent();
+  const { past_event_galleries: galleries, pageLabels } = content;
   const matchIndex = galleries.findIndex((event) => event.slug === slug);
 
   if (matchIndex === -1) {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center gap-4">
-        <p className="text-muted-foreground text-lg">Event not found.</p>
+        <p className="text-muted-foreground text-lg">{pageLabels.eventNotFound}</p>
         <Link to="/events" className="text-sm font-semibold underline" style={{ color: 'hsl(var(--primary))' }}>
           Back to Events
         </Link>
@@ -291,5 +292,5 @@ export default function PastEventPage() {
     );
   }
 
-  return <GalleryView eventIndex={matchIndex} galleries={galleries} />;
+  return <GalleryView eventIndex={matchIndex} galleries={galleries} labels={pageLabels} />;
 }

@@ -1,0 +1,50 @@
+{
+  "splash": { "tagline": "Where Data Meets Community", "scrollLabel": "Scroll to explore" },
+  "hero": {
+    "eyebrow": "University of Sydney",
+    "heading": "Welcome to StatSoc",
+    "subheading": "The Statistics Society at the University of Sydney.",
+    "primaryButton": "Join StatSoc",
+    "primaryHref": "/membership",
+    "secondaryButton": "See Events",
+    "secondaryHref": "/events",
+    "stats": [
+      { "id": "1", "value": "USYD", "label": "University" },
+      { "id": "2", "value": "Free", "label": "Membership" },
+      { "id": "3", "value": "2026", "label": "Year" },
+      { "id": "4", "value": "All", "label": "Students Welcome" }
+    ]
+  },
+  "intro": {
+    "heading": "About StatSoc",
+    "body": [{ "id": "1", "text": "StatSoc brings together students interested in statistics, data science and community." }],
+    "image": "/airo-assets/images/pages/home/students-collab",
+    "imageAlt": "StatSoc members collaborating",
+    "button": "Become a member",
+    "buttonHref": "/membership"
+  },
+  "events": {
+    "eyebrow": "What's Happening",
+    "heading": "Our Events",
+    "allButton": "See all events",
+    "emptyHeading": "We’re planning what’s next",
+    "emptyBody": "Upcoming StatSoc events will appear here as soon as they’re announced.",
+    "detailsLabel": "Event details"
+  },
+  "navCards": {
+    "heading": "Explore StatSoc",
+    "items": [
+      { "id": "1", "title": "Events", "description": "Discover our events.", "href": "/events" },
+      { "id": "2", "title": "Opportunities", "description": "Explore opportunities.", "href": "/opportunities" },
+      { "id": "3", "title": "Newsletter", "description": "Read our newsletters.", "href": "/newsletter" },
+      { "id": "4", "title": "Membership", "description": "Join StatSoc.", "href": "/membership" }
+    ],
+    "exploreLabel": "Explore"
+  },
+  "cta": {
+    "heading": "Ready to join the StatSoc family?",
+    "body": "Membership is free through USU. Sign up in two minutes and unlock events, opportunities, and a community that loves data as much as you do.",
+    "button": "Join StatSoc — it's free!",
+    "href": "/membership"
+  }
+}
