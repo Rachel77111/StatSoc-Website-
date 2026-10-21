@@ -3,8 +3,8 @@ backend:
   repo: Rachel77111/StatSoc-Website-
   branch: main
 
-site_url: https://6ad8c1a196ab24eedf0848a0--usydstatsoc.netlify.app
-display_url: https://6ad8c1a196ab24eedf0848a0--usydstatsoc.netlify.app
+site_url: https://usydstatsoc.netlify.app
+display_url: https://usydstatsoc.netlify.app/opportunities
 local_backend: false
 publish_mode: simple
 media_folder: public/uploads/events
