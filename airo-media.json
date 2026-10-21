@@ -1,0 +1,650 @@
+{
+  "pages/home/event-1": {
+    "requestedSize": {
+      "width": 600,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "graphicalStyles": "photography",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2224118836",
+    "searchQuery": "university students networking event social gathering",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/599485534",
+      "https://img1.wsimg.com/isteam/getty/1529821833",
+      "https://img1.wsimg.com/isteam/getty/1785808259"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:00:56.541Z",
+    "lastUpdated": "2026-10-12T06:00:56.541Z",
+    "gettyId": "2224118836",
+    "alternativeGettyIds": [
+      "599485534",
+      "1529821833",
+      "1785808259"
+    ]
+  },
+  "pages/home/event-3": {
+    "requestedSize": {
+      "width": 600,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "graphicalStyles": "photography",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/472096051",
+    "searchQuery": "university students career fair industry professionals",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2224118836",
+      "https://img1.wsimg.com/isteam/getty/2155292120",
+      "https://img1.wsimg.com/isteam/getty/530685773"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:00:56.862Z",
+    "lastUpdated": "2026-10-12T06:00:56.862Z",
+    "gettyId": "472096051",
+    "alternativeGettyIds": [
+      "2224118836",
+      "2155292120",
+      "530685773"
+    ]
+  },
+  "pages/home/students-collab": {
+    "requestedSize": {
+      "width": 800,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "graphicalStyles": "photography",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2276918297",
+    "searchQuery": "university students studying together collaborating campus",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2282530929",
+      "https://img1.wsimg.com/isteam/getty/2189800011",
+      "https://img1.wsimg.com/isteam/getty/2239804328",
+      "https://img1.wsimg.com/isteam/getty/1716708218"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:00:58.497Z",
+    "lastUpdated": "2026-10-12T06:00:58.497Z",
+    "gettyId": "2276918297",
+    "alternativeGettyIds": [
+      "2282530929",
+      "2189800011",
+      "2239804328",
+      "1716708218"
+    ]
+  },
+  "pages/home/event-2": {
+    "requestedSize": {
+      "width": 600,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "graphicalStyles": "photography",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2223439241",
+    "searchQuery": "university workshop seminar students learning data",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1451309715",
+      "https://img1.wsimg.com/isteam/getty/1521680686",
+      "https://img1.wsimg.com/isteam/getty/1516287974"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:00:59.311Z",
+    "lastUpdated": "2026-10-12T06:00:59.311Z",
+    "gettyId": "2223439241",
+    "alternativeGettyIds": [
+      "1451309715",
+      "1521680686",
+      "1516287974"
+    ]
+  },
+  "logo/horizontal": {
+    "mediaType": "logo",
+    "currentUrl": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-transparent-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png",
+    "searchQuery": "A friendly, bold logo for StatSoc — the Statistics Society of the University of ",
+    "alternatives": [],
+    "solidUrlMap": {
+      "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-transparent-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-original-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+    },
+    "mockupUrlMap": {
+      "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-transparent-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-transparent-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+    },
+    "landscapeMockupUrlMap": {},
+    "logoSourceMap": {
+      "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-transparent-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png": {
+        "sessionId": "1538d058-4ef0-4f8f-80ab-dae55e12c2c1",
+        "logoId": "b8dea334-3d31-42ff-9ee6-62751c584cfb",
+        "groupId": "80efbdc5-14b3-492c-bfd8-037e29499ec9"
+      }
+    },
+    "productMockupsMap": {
+      "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-transparent-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png": [
+        {
+          "type": "mug",
+          "label": "Mug",
+          "url": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-mockup-mug-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+        },
+        {
+          "type": "card",
+          "label": "Business Card",
+          "url": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-mockup-card-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+        },
+        {
+          "type": "tshirt",
+          "label": "T-Shirt",
+          "url": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-mockup-tshirt-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+        },
+        {
+          "type": "box",
+          "label": "Packaging",
+          "url": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-mockup-box-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+        }
+      ]
+    },
+    "productMockups": [
+      {
+        "type": "mug",
+        "label": "Mug",
+        "url": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-mockup-mug-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+      },
+      {
+        "type": "card",
+        "label": "Business Card",
+        "url": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-mockup-card-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+      },
+      {
+        "type": "tshirt",
+        "label": "T-Shirt",
+        "url": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-mockup-tshirt-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+      },
+      {
+        "type": "box",
+        "label": "Packaging",
+        "url": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-mockup-box-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png"
+      }
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:01:31.935Z",
+    "lastUpdated": "2026-10-12T06:01:58.834Z",
+    "surfaceMode": "light",
+    "generatedForSurfaceColor": "#ffffff",
+    "lightSurfaceUrl": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/1538d058-4ef0-4f8f-80ab-dae55e12c2c1/horizontal-transparent-b8dea334-3d31-42ff-9ee6-62751c584cfb/logo-logo.png",
+    "logoGroupId": "80efbdc5-14b3-492c-bfd8-037e29499ec9"
+  },
+  "logo/favicon": {
+    "mediaType": "logo",
+    "currentUrl": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/63433282-c866-4a15-b4ba-0b4e20dcf03c/favicon-transparent-d3ab13c7-d47d-4be7-9fd3-2cf32ab65a07/logo-logo.png",
+    "searchQuery": "favicon",
+    "alternatives": [],
+    "logoSourceMap": {
+      "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/63433282-c866-4a15-b4ba-0b4e20dcf03c/favicon-transparent-d3ab13c7-d47d-4be7-9fd3-2cf32ab65a07/logo-logo.png": {
+        "sessionId": "63433282-c866-4a15-b4ba-0b4e20dcf03c",
+        "logoId": "d3ab13c7-d47d-4be7-9fd3-2cf32ab65a07",
+        "groupId": "80efbdc5-14b3-492c-bfd8-037e29499ec9"
+      }
+    },
+    "logoGroupId": "80efbdc5-14b3-492c-bfd8-037e29499ec9",
+    "solidUrlMap": {
+      "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/63433282-c866-4a15-b4ba-0b4e20dcf03c/favicon-transparent-d3ab13c7-d47d-4be7-9fd3-2cf32ab65a07/logo-logo.png": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/63433282-c866-4a15-b4ba-0b4e20dcf03c/favicon-original-d3ab13c7-d47d-4be7-9fd3-2cf32ab65a07/logo-logo.png"
+    },
+    "userModified": false,
+    "createdAt": "2026-10-12T06:01:44.781Z",
+    "lastUpdated": "2026-10-12T06:01:59.003Z",
+    "surfaceMode": "light",
+    "generatedForSurfaceColor": "#ffffff",
+    "lightSurfaceUrl": "https://isteam.wsimg.com/genai-assistant/logoagent/customer/f4562771-b71b-4c3a-b632-923cad06c452/session/63433282-c866-4a15-b4ba-0b4e20dcf03c/favicon-transparent-d3ab13c7-d47d-4be7-9fd3-2cf32ab65a07/logo-logo.png"
+  },
+  "pages/events/hero": {
+    "requestedSize": {
+      "width": 1440,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2198907844",
+    "searchQuery": "university students event celebration campus outdoor",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1480277406",
+      "https://img1.wsimg.com/isteam/getty/2158539140",
+      "https://img1.wsimg.com/isteam/getty/1419580307"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:15:11.410Z",
+    "lastUpdated": "2026-10-12T06:15:11.410Z",
+    "gettyId": "2198907844",
+    "alternativeGettyIds": [
+      "1480277406",
+      "2158539140",
+      "1419580307"
+    ]
+  },
+  "pages/events/workshop": {
+    "requestedSize": {
+      "width": 600,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2291304524",
+    "searchQuery": "students workshop coding data science laptop university",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/831613730",
+      "https://img1.wsimg.com/isteam/getty/2171171864",
+      "https://img1.wsimg.com/isteam/getty/2167909847"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:15:17.284Z",
+    "lastUpdated": "2026-10-12T06:15:17.284Z",
+    "gettyId": "2291304524",
+    "alternativeGettyIds": [
+      "831613730",
+      "2171171864",
+      "2167909847"
+    ]
+  },
+  "pages/events/social": {
+    "requestedSize": {
+      "width": 600,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2226493224",
+    "searchQuery": "university students social gathering drinks fun campus",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2220072861",
+      "https://img1.wsimg.com/isteam/getty/2226493361",
+      "https://img1.wsimg.com/isteam/getty/2217286722"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:15:23.867Z",
+    "lastUpdated": "2026-10-12T06:15:23.867Z",
+    "gettyId": "2226493224",
+    "alternativeGettyIds": [
+      "2220072861",
+      "2226493361",
+      "2217286722"
+    ]
+  },
+  "pages/events/panel": {
+    "requestedSize": {
+      "width": 600,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1401986600",
+    "searchQuery": "industry panel discussion professionals speaking audience",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2199152488",
+      "https://img1.wsimg.com/isteam/getty/1692553269",
+      "https://img1.wsimg.com/isteam/getty/2224113951"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:15:30.336Z",
+    "lastUpdated": "2026-10-12T06:15:30.336Z",
+    "gettyId": "1401986600",
+    "alternativeGettyIds": [
+      "2199152488",
+      "1692553269",
+      "2224113951"
+    ]
+  },
+  "pages/events/competition": {
+    "requestedSize": {
+      "width": 600,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1430330223",
+    "searchQuery": "students competition hackathon data challenge teamwork",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2167909847",
+      "https://img1.wsimg.com/isteam/getty/1299764496",
+      "https://img1.wsimg.com/isteam/getty/940143958"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:15:41.240Z",
+    "lastUpdated": "2026-10-12T06:15:41.240Z",
+    "gettyId": "1430330223",
+    "alternativeGettyIds": [
+      "2167909847",
+      "1299764496",
+      "940143958"
+    ]
+  },
+  "pages/events/careers": {
+    "requestedSize": {
+      "width": 600,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2259905616",
+    "searchQuery": "careers fair students recruiters professional networking",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2224118836",
+      "https://img1.wsimg.com/isteam/getty/530686149",
+      "https://img1.wsimg.com/isteam/getty/1486287657"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-12T06:15:50.560Z",
+    "lastUpdated": "2026-10-12T06:15:50.560Z",
+    "gettyId": "2259905616",
+    "alternativeGettyIds": [
+      "2224118836",
+      "530686149",
+      "1486287657"
+    ]
+  },
+  "pages/past-events/welcome-bbq-3": {
+    "requestedSize": {
+      "width": 800,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2288514812",
+    "searchQuery": "group of diverse university students smiling campus lawn",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2219619852",
+      "https://img1.wsimg.com/isteam/getty/1353373647",
+      "https://img1.wsimg.com/isteam/getty/2239794340"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:24.197Z",
+    "lastUpdated": "2026-10-13T13:55:24.197Z",
+    "gettyId": "2288514812",
+    "alternativeGettyIds": [
+      "2219619852",
+      "1353373647",
+      "2239794340"
+    ]
+  },
+  "pages/past-events/welcome-bbq-2": {
+    "requestedSize": {
+      "width": 600,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2248639195",
+    "searchQuery": "students laughing eating food outdoor university event",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/537331780",
+      "https://img1.wsimg.com/isteam/getty/2246722287",
+      "https://img1.wsimg.com/isteam/getty/969231702"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:26.494Z",
+    "lastUpdated": "2026-10-13T13:55:26.494Z",
+    "gettyId": "2248639195",
+    "alternativeGettyIds": [
+      "537331780",
+      "2246722287",
+      "969231702"
+    ]
+  },
+  "pages/past-events/welcome-bbq-1": {
+    "requestedSize": {
+      "width": 800,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1152122429",
+    "searchQuery": "university students BBQ outdoor social gathering campus",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/809958710",
+      "https://img1.wsimg.com/isteam/getty/175260325",
+      "https://img1.wsimg.com/isteam/getty/1040519228"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:27.566Z",
+    "lastUpdated": "2026-10-13T13:55:27.566Z",
+    "gettyId": "1152122429",
+    "alternativeGettyIds": [
+      "809958710",
+      "175260325",
+      "1040519228"
+    ]
+  },
+  "pages/past-events/bayesian-2": {
+    "requestedSize": {
+      "width": 600,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/690598182",
+    "searchQuery": "students coding laptop workshop data science classroom",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2217195345",
+      "https://img1.wsimg.com/isteam/getty/609682836",
+      "https://img1.wsimg.com/isteam/getty/471845349"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:35.756Z",
+    "lastUpdated": "2026-10-13T13:55:35.756Z",
+    "gettyId": "690598182",
+    "alternativeGettyIds": [
+      "2217195345",
+      "609682836",
+      "471845349"
+    ]
+  },
+  "pages/past-events/bayesian-1": {
+    "requestedSize": {
+      "width": 800,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2245119688",
+    "searchQuery": "university lecture statistics whiteboard students learning",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1325425484",
+      "https://img1.wsimg.com/isteam/getty/1439722393",
+      "https://img1.wsimg.com/isteam/getty/547139464"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:36.391Z",
+    "lastUpdated": "2026-10-13T13:55:36.391Z",
+    "gettyId": "2245119688",
+    "alternativeGettyIds": [
+      "1325425484",
+      "1439722393",
+      "547139464"
+    ]
+  },
+  "pages/past-events/welcome-bbq-4": {
+    "requestedSize": {
+      "width": 600,
+      "height": 800,
+      "fit": "cover"
+    },
+    "orientations": "vertical",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2252710121",
+    "searchQuery": "students mingling drinks outdoor social event university",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/963347318",
+      "https://img1.wsimg.com/isteam/getty/2298796382",
+      "https://img1.wsimg.com/isteam/getty/2288367439"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:37.695Z",
+    "lastUpdated": "2026-10-13T13:55:37.695Z",
+    "gettyId": "2252710121",
+    "alternativeGettyIds": [
+      "963347318",
+      "2298796382",
+      "2288367439"
+    ]
+  },
+  "pages/past-events/trivia-1": {
+    "requestedSize": {
+      "width": 800,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2223908545",
+    "searchQuery": "students trivia night pub quiz team laughing fun",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1454402829",
+      "https://img1.wsimg.com/isteam/getty/1669808409",
+      "https://img1.wsimg.com/isteam/getty/2267487103"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:46.254Z",
+    "lastUpdated": "2026-10-13T13:55:46.254Z",
+    "gettyId": "2223908545",
+    "alternativeGettyIds": [
+      "1454402829",
+      "1669808409",
+      "2267487103"
+    ]
+  },
+  "pages/past-events/trivia-2": {
+    "requestedSize": {
+      "width": 600,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1227346727",
+    "searchQuery": "group friends celebrating winning game night indoor",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2240841693",
+      "https://img1.wsimg.com/isteam/getty/819699152",
+      "https://img1.wsimg.com/isteam/getty/2250615824"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:46.982Z",
+    "lastUpdated": "2026-10-13T13:55:46.982Z",
+    "gettyId": "1227346727",
+    "alternativeGettyIds": [
+      "2240841693",
+      "819699152",
+      "2250615824"
+    ]
+  },
+  "pages/past-events/bayesian-3": {
+    "requestedSize": {
+      "width": 800,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2170331031",
+    "searchQuery": "student presenting data analysis results projector screen",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1320658267",
+      "https://img1.wsimg.com/isteam/getty/2170331669",
+      "https://img1.wsimg.com/isteam/getty/2192225696"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:47.253Z",
+    "lastUpdated": "2026-10-13T13:55:47.253Z",
+    "gettyId": "2170331031",
+    "alternativeGettyIds": [
+      "1320658267",
+      "2170331669",
+      "2192225696"
+    ]
+  },
+  "pages/past-events/trivia-3": {
+    "requestedSize": {
+      "width": 600,
+      "height": 800,
+      "fit": "cover"
+    },
+    "orientations": "vertical",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2286606557",
+    "searchQuery": "young adults laughing bar social night out drinks",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/493613473",
+      "https://img1.wsimg.com/isteam/getty/2213256293",
+      "https://img1.wsimg.com/isteam/getty/2252710121"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:54.141Z",
+    "lastUpdated": "2026-10-13T13:55:54.141Z",
+    "gettyId": "2286606557",
+    "alternativeGettyIds": [
+      "493613473",
+      "2213256293",
+      "2252710121"
+    ]
+  },
+  "pages/past-events/bayesian-4": {
+    "requestedSize": {
+      "width": 800,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "minimumSize": "large",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2178258093",
+    "searchQuery": "students group discussion seminar university classroom engaged",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2282503794",
+      "https://img1.wsimg.com/isteam/getty/2230771522",
+      "https://img1.wsimg.com/isteam/getty/2232568131"
+    ],
+    "userModified": false,
+    "createdAt": "2026-10-13T13:55:55.038Z",
+    "lastUpdated": "2026-10-13T13:55:55.038Z",
+    "gettyId": "2178258093",
+    "alternativeGettyIds": [
+      "2282503794",
+      "2230771522",
+      "2232568131"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+
+export const opportunities = {
+    heading: "Explore Opportunities",
+    subheading:
+      "Discover internships, graduate roles, scholarships, research opportunities and career development resources in statistics and data science.",
+  };
+  
