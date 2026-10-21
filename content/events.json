@@ -57,7 +57,7 @@
     {
       "time": "6:00pm - 8:00pm ",
       "featured": true,
-      "date": "14 Oct 2026",
+      "date": "30 Oct 2026",
       "location": "BHB, University of Sydney",
       "title": "StatSoc Speed Friendly ",
       "tag": "Social",
@@ -67,15 +67,15 @@
       "category": "social"
     },
     {
-      "time": "2:00 PM – 4:00 PM",
+      "time": "7:00pm - 2:00am ",
       "featured": true,
-      "date": "5 Nov 2026",
-      "location": "Carslaw Lecture Theatre 157",
-      "title": "Data Visualisation Workshop",
-      "tag": "Workshop",
+      "date": "29 Nov 2026",
+      "location": "Side Bar, Shark Hotel, IVY ",
+      "title": "PubCrawl ",
+      "tag": "Social",
       "id": "ev2",
-      "image": "/events/illustrations/workshop-data.svg",
-      "description": "Turn raw data into clear, compelling stories in this beginner-friendly hands-on workshop.",
+      "image": "/uploads/events/statsoc-newsletter-1.png",
+      "description": "Expect a great night of music, drinks, socialising and good vibes as we move from venue to venue together. 🍻✨\n\n🎟️ Ticket Prices\nEarly Bird — $5\nGeneral — $8\nFinal Release — $10\n\nYour ticket gives you access to the event, plus exclusive links and offers available only to attendees. Please note that selected links may be unique to each ticket holder and should not be shared.\n\nGet the ticket: https://events.humanitix.com/sudata-x-statsoc-x-pmsoc-x-suede-pubcrawl",
       "category": "workshop"
     },
     {
