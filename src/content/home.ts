@@ -32,6 +32,7 @@ export const home = {
       description: string;
       date: string;
       tag: string;
+      image?: string;
     }[],
   },
   navCards: {

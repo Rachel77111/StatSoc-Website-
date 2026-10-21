@@ -3,7 +3,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, AnimatePresence, useInView } from 'motion/react';
 import { useParams, Link } from 'react-router';
 import { ArrowLeft, Calendar, X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
-import { past_event_galleries } from '@/content/events';
+import { useEventsContent } from '@/lib/use-events-content';
 
 const tagColours: Record<string, { bg: string; text: string }> = {
   Social:      { bg: '#10B981', text: '#fff' },
@@ -30,11 +30,12 @@ function FadeIn({ children, delay = 0, className = '' }: { children: ReactNode; 
   );
 }
 
-function GalleryView({ eventIndex }: { eventIndex: number }) {
+function GalleryView({ eventIndex, galleries }: { eventIndex: number; galleries: ReturnType<typeof useEventsContent>['past_event_galleries'] }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const photoCount = past_event_galleries[eventIndex].photos.length;
+  const gallery = galleries[eventIndex];
+  const photoCount = gallery.photos.length;
 
-  const handleKey = useCallback((e: WindowEventMap['keydown']) => {
+  const handleKey = useCallback((e: { key: string }) => {
     if (lightboxIndex === null) return;
     if (e.key === 'Escape')     setLightboxIndex(null);
     if (e.key === 'ArrowRight') setLightboxIndex((i) => i !== null ? (i + 1) % photoCount : null);
@@ -51,16 +52,16 @@ function GalleryView({ eventIndex }: { eventIndex: number }) {
     return () => { document.body.style.overflow = ''; };
   }, [lightboxIndex]);
 
-  const colours = tagColours[past_event_galleries[eventIndex].tag] ?? tagColours.Social;
+  const colours = tagColours[gallery.tag] ?? tagColours.Social;
 
   return (
     <>
       <Helmet>
-        <title>{past_event_galleries[eventIndex].title} — StatSoc</title>
-        <meta name="description" content={past_event_galleries[eventIndex].description} />
-        <link rel="canonical" href={`https://statsoc.sydney.edu.au/events/past/${past_event_galleries[eventIndex].slug}`} />
-        <meta property="og:title" content={`${past_event_galleries[eventIndex].title} — StatSoc`} />
-        <meta property="og:description" content={past_event_galleries[eventIndex].description} />
+        <title>{gallery.title} — StatSoc</title>
+        <meta name="description" content={gallery.description} />
+        <link rel="canonical" href={`https://statsoc.sydney.edu.au/events/past/${gallery.slug}`} />
+        <meta property="og:title" content={`${gallery.title} — StatSoc`} />
+        <meta property="og:description" content={gallery.description} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
@@ -104,10 +105,10 @@ function GalleryView({ eventIndex }: { eventIndex: number }) {
               className="flex flex-wrap items-center gap-3 mb-5"
             >
               <span className="px-3 py-1 rounded-full text-xs font-bold" style={{ background: colours.bg, color: colours.text }}>
-                {past_event_galleries[eventIndex].tag}
+                {gallery.tag}
               </span>
               <span className="flex items-center gap-1.5 text-white/50 text-sm">
-                <Calendar size={13} />{past_event_galleries[eventIndex].date}
+                <Calendar size={13} />{gallery.date}
               </span>
             </motion.div>
 
@@ -117,7 +118,7 @@ function GalleryView({ eventIndex }: { eventIndex: number }) {
               transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' as const }}
               className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight"
             >
-              {past_event_galleries[eventIndex].title}
+              {gallery.title}
             </motion.h1>
 
             <motion.p
@@ -138,7 +139,7 @@ function GalleryView({ eventIndex }: { eventIndex: number }) {
             <div>
               <h2 className="text-2xl font-extrabold" style={{ color: 'hsl(var(--secondary))' }}>Event Gallery</h2>
               <p className="text-muted-foreground text-sm mt-0.5">
-                {past_event_galleries[eventIndex].photos.length} moments — select a photo to explore the gallery
+                {gallery.photos.length} moments — select a photo to explore the gallery
               </p>
             </div>
           </div>
@@ -147,7 +148,7 @@ function GalleryView({ eventIndex }: { eventIndex: number }) {
         {/* ── MASONRY GALLERY ── */}
         <section className="max-w-4xl mx-auto px-6 pb-20">
           <div className="columns-1 sm:columns-2 md:columns-3 gap-3 space-y-3">
-            {past_event_galleries[eventIndex].photos.map((photo, i) => (
+            {gallery.photos.map((photo, i) => (
               <FadeIn key={photo.id} delay={i * 0.08} className="break-inside-avoid">
                 <motion.button
                   onClick={() => setLightboxIndex(i)}
@@ -243,16 +244,16 @@ function GalleryView({ eventIndex }: { eventIndex: number }) {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={past_event_galleries[eventIndex].photos[lightboxIndex].src}
-                alt={past_event_galleries[eventIndex].photos[lightboxIndex].alt}
+                src={gallery.photos[lightboxIndex].src}
+                alt={gallery.photos[lightboxIndex].alt}
                 className="max-h-[78vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl"
               />
               <div className="mt-4 flex items-center gap-4">
-                <p className="text-white/70 text-sm">{past_event_galleries[eventIndex].photos[lightboxIndex].alt}</p>
+                <p className="text-white/70 text-sm">{gallery.photos[lightboxIndex].alt}</p>
                 <span className="text-white/40 text-xs">{lightboxIndex + 1} / {photoCount}</span>
               </div>
               <div className="flex items-center gap-2 mt-3">
-                {past_event_galleries[eventIndex].photos.map((_, i) => (
+                {gallery.photos.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setLightboxIndex(i)}
@@ -276,7 +277,8 @@ function GalleryView({ eventIndex }: { eventIndex: number }) {
 
 export default function PastEventPage() {
   const { slug } = useParams<{ slug: string }>();
-  const matchIndex = past_event_galleries.findIndex((e) => e.slug === slug);
+  const { past_event_galleries: galleries } = useEventsContent();
+  const matchIndex = galleries.findIndex((event) => event.slug === slug);
 
   if (matchIndex === -1) {
     return (
@@ -289,5 +291,5 @@ export default function PastEventPage() {
     );
   }
 
-  return <GalleryView eventIndex={matchIndex} />;
+  return <GalleryView eventIndex={matchIndex} galleries={galleries} />;
 }

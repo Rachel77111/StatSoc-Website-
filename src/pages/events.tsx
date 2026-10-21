@@ -3,7 +3,8 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView } from 'motion/react';
 import { Calendar, Clock, MapPin, ChevronLeft, ChevronRight, Images } from 'lucide-react';
 import { Link } from 'react-router';
-import { events, past_event_galleries } from '@/content/events';
+import { useEventsContent } from '@/lib/use-events-content';
+
 
 const tagColours: Record<string, { bg: string; text: string }> = {
   Networking:  { bg: 'hsl(var(--primary))',   text: 'hsl(var(--secondary))' },
@@ -42,9 +43,11 @@ function FadeIn({ children, delay = 0, className = '' }: { children: ReactNode; 
 export default function EventsPage() {
   const [activeFilter, setActiveFilter] = useState('all');
   const eventRailRef = useRef<HTMLDivElement>(null);
+  const content = useEventsContent();
+  const { past_event_galleries } = content;
   const filteredEvents = activeFilter === 'all'
-    ? events.events
-    : events.events.filter((event) => event.category === activeFilter);
+    ? content.events
+    : content.events.filter((event) => event.category === activeFilter);
 
   return (
     <>
@@ -100,16 +103,15 @@ export default function EventsPage() {
               transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' as const }}
               className="text-5xl md:text-6xl font-extrabold text-white mb-5"
             >
-              {events.hero.title}
+              {content.hero.title}
             </motion.h1>
-
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-white/70 max-w-2xl mx-auto"
             >
-              {events.hero.subtitle}
+              {content.hero.subtitle}
             </motion.p>
           </div>
         </section>
@@ -117,7 +119,7 @@ export default function EventsPage() {
         {/* ── FILTER BAR ── */}
         <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
           <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 overflow-x-auto">
-            {events.filters.map((f) => (
+            {content.filters.map((f) => (
               <button
                 key={f.id}
                 onClick={() => setActiveFilter(f.value)}
@@ -233,16 +235,16 @@ export default function EventsPage() {
               <div>
                 <div className="mb-2 flex items-center gap-3">
                   <span className="h-8 w-1 rounded-full" style={{ background: 'hsl(var(--primary))' }} />
-                  <h2 className="text-2xl font-extrabold text-secondary">{events.pastHeading}</h2>
+                  <h2 className="text-2xl font-extrabold text-secondary">{content.pastHeading}</h2>
                 </div>
-                <p className="text-sm text-muted-foreground sm:ml-4">{events.pastSubheading}</p>
+                <p className="text-sm text-muted-foreground sm:ml-4">{content.pastSubheading}</p>
               </div>
               <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">A look back</span>
             </FadeIn>
 
-            {events.pastEvents.length > 0 ? (
+            {content.pastEvents.length > 0 ? (
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {events.pastEvents.map((event, i) => {
+              {content.pastEvents.map((event, i) => {
                 const colours = tagColours[event.tag] ?? tagColours.Social;
                 const gallery = past_event_galleries.find((g) => g.id === event.id);
                 if (!gallery) return null;
@@ -325,17 +327,17 @@ export default function EventsPage() {
             </div>
             <div className="relative max-w-2xl mx-auto px-6 text-center">
               <h2 className="text-3xl font-extrabold mb-4" style={{ color: 'hsl(var(--secondary))' }}>
-                {events.cta.heading}
+                {content.cta.heading}
               </h2>
               <p className="text-base mb-8" style={{ color: 'hsl(var(--secondary)/0.75)' }}>
-                {events.cta.body}
+                {content.cta.body}
               </p>
               <Link
                 to="/newsletter"
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-base transition-all duration-200 hover:scale-105 hover:shadow-xl"
                 style={{ background: 'hsl(var(--secondary))', color: 'white' }}
               >
-                {events.cta.button} <ChevronRight size={16} />
+                {content.cta.button} <ChevronRight size={16} />
               </Link>
             </div>
           </section>

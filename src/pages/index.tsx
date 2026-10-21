@@ -4,7 +4,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView } from 'motion/react';
 import { ArrowDown, ChevronRight, Calendar, Briefcase, Sparkles, Users } from 'lucide-react';
 import { home } from '@/content/home';
-import { events as eventContent } from '@/content/events';
+import { useEventsContent } from '@/lib/use-events-content';
 import ScatterDots from '@/components/ScatterDots';
 
 // ─── Splash Screen ────────────────────────────────────────────────────────────
@@ -246,6 +246,7 @@ const navIcons = [
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function HomePage() {
   const [splashDone, setSplashDone] = useState(false);
+  const eventContent = useEventsContent();
   const upcomingEvents = eventContent.events.length > 0 ? eventContent.events : home.events.items;
 
   return (
@@ -444,7 +445,7 @@ export default function HomePage() {
                       >
                         <div className="relative min-h-36 w-28 shrink-0 overflow-hidden sm:w-36">
                           <img
-                            src={event.image ?? eventImages[i % eventImages.length]}
+                            src={('image' in event && event.image) || eventImages[i % eventImages.length]}
                             alt=""
                             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
