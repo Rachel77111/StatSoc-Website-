@@ -1,0 +1,116 @@
+{
+  "heading": "Meet our team",
+  "intro": "Different strengths. Shared curiosity. Meet the roles behind the StatSoc community.",
+  "roles": [
+    {
+      "id": "president",
+      "title": "President",
+      "group": "big-four",
+      "tagline": "Sets the direction",
+      "description": "Brings the team together and helps shape the society\u2019s direction.",
+      "focus": "Leadership",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "vice-president",
+      "title": "Vice President",
+      "group": "big-four",
+      "tagline": "Connects the dots",
+      "description": "Supports the president and helps the executive team turn ideas into action.",
+      "focus": "Collaboration",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "treasurer",
+      "title": "Treasurer",
+      "group": "big-four",
+      "tagline": "Makes it add up",
+      "description": "Looks after budgets and helps the society make the most of its resources.",
+      "focus": "Finance",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "secretary",
+      "title": "Secretary",
+      "group": "big-four",
+      "tagline": "Keeps us in sync",
+      "description": "Keeps communication, records and society administration organised.",
+      "focus": "Communication",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "events",
+      "title": "Event Directors",
+      "group": "directors",
+      "tagline": "Creates the moments",
+      "description": "Plans experiences that bring our statistics community together.",
+      "focus": "Experiences",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "brand-1",
+      "title": "Brand Director",
+      "group": "directors",
+      "tagline": "Gives StatSoc its voice",
+      "description": "Shapes our visual identity and shares the stories behind the society.",
+      "focus": "Creativity",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "brand-2",
+      "title": "Brand Director",
+      "group": "directors",
+      "tagline": "Gives StatSoc its voice",
+      "description": "Shapes our visual identity and shares the stories behind the society.",
+      "focus": "Creativity",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "sponsorship-1",
+      "title": "Sponsorship Director",
+      "group": "directors",
+      "tagline": "Builds new connections",
+      "description": "Develops relationships with partners and explores opportunities for members.",
+      "focus": "Partnerships",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "sponsorship-2",
+      "title": "Sponsorship Director",
+      "group": "directors",
+      "tagline": "Builds new connections",
+      "description": "Develops relationships with partners and explores opportunities for members.",
+      "focus": "Partnerships",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "operations",
+      "title": "Operation Director",
+      "group": "directors",
+      "tagline": "Keeps things moving",
+      "description": "Coordinates the practical details that help society activities run smoothly.",
+      "focus": "Coordination",
+      "name": "",
+      "image": ""
+    },
+    {
+      "id": "data",
+      "title": "Data Analytic Director",
+      "group": "directors",
+      "tagline": "Finds the story in data",
+      "description": "Explores data and insights to help inform the society\u2019s decisions.",
+      "focus": "Insights",
+      "name": "",
+      "image": ""
+    }
+  ]
+}
