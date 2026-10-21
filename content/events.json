@@ -1,95 +1,162 @@
 {
+  "pastEvents": [
+    {
+      "id": "past-welcome-2026",
+      "title": "Semester One Welcome Social",
+      "description": "A relaxed start to the semester with games, snacks and new connections.",
+      "date": "12 Mar 2026",
+      "tag": "Social"
+    },
+    {
+      "id": "past-data-workshop-2026",
+      "title": "Data Visualisation Workshop",
+      "description": "An afternoon of practical data storytelling and visualisation.",
+      "date": "23 Apr 2026",
+      "tag": "Workshop"
+    },
+    {
+      "id": "past-careers-panel-2026",
+      "title": "Analytics Careers Panel",
+      "description": "Students met graduates working across analytics and data science.",
+      "date": "21 May 2026",
+      "tag": "Careers"
+    }
+  ],
+  "pageLabels": {
+    "upcomingDescription": "Find your next favourite thing to do with StatSoc.",
+    "gallerySelectionHint": "moments — select a photo to explore the gallery",
+    "goToPhotoPrefix": "Go to photo",
+    "galleryButton": "View photo gallery",
+    "upcomingHeading": "Upcoming Events",
+    "photoCollageAlt": "Event photo collage",
+    "eventNotFound": "Event not found.",
+    "photoViewPrefix": "View photo:",
+    "filterBadge": "All Events",
+    "galleryCountSuffix": "photos",
+    "galleryHeading": "Event Gallery",
+    "upcomingEmptyHeading": "New events are on the way",
+    "backCtaText": "Want to see what's coming up next?",
+    "pastEyebrow": "A look back",
+    "closePhoto": "Close photo viewer",
+    "backCtaButton": "Back to all events",
+    "ctaHref": "/newsletter",
+    "previousPhoto": "Previous photo",
+    "backToEvents": "Back to Events",
+    "galleryDescriptionPrefix": "A few moments from the day, captured by the StatSoc community.",
+    "upcomingEmptyText": "Check back soon for the next StatSoc get-together.",
+    "nextPhoto": "Next photo"
+  },
+  "pastHeading": "Past Events",
+  "cta": {
+    "heading": "Stay Connected with StatSoc",
+    "body": "Don't miss our upcoming events, opportunities and community updates.",
+    "button": "Read Our Newsletter"
+  },
+  "pastSubheading": "Take a look back at the events and memories we've shared.",
+  "events": [
+    {
+      "time": "6:00pm - 8:00pm ",
+      "featured": true,
+      "date": "14 Oct 2026",
+      "location": "BHB, University of Sydney",
+      "title": "StatSoc Speed Friendly ",
+      "tag": "Social",
+      "id": "ev1",
+      "image": "/uploads/events/847858945_1504456644841569_3043628350883354851_n.jpg",
+      "description": "Meet fellow statistics and data science students over snacks, games and a relaxed evening on campus. Most importantly, make new friends!!!",
+      "category": "social"
+    },
+    {
+      "time": "2:00 PM – 4:00 PM",
+      "featured": true,
+      "date": "5 Nov 2026",
+      "location": "Carslaw Lecture Theatre 157",
+      "title": "Data Visualisation Workshop",
+      "tag": "Workshop",
+      "id": "ev2",
+      "image": "/events/illustrations/workshop-data.svg",
+      "description": "Turn raw data into clear, compelling stories in this beginner-friendly hands-on workshop.",
+      "category": "workshop"
+    },
+    {
+      "time": "6:00 PM – 7:30 PM",
+      "featured": true,
+      "date": "12 Nov 2026",
+      "location": "Abercrombie Business School, Room 2130",
+      "title": "Careers in Analytics Panel",
+      "tag": "Careers",
+      "id": "ev3",
+      "image": "/events/illustrations/careers-panel.svg",
+      "description": "Hear how graduates use statistics in consulting, technology, health and the public sector.",
+      "category": "careers"
+    },
+    {
+      "time": "10:30 AM – 12:00 PM",
+      "featured": false,
+      "date": "18 Nov 2026",
+      "location": "Courtyard Café, Camperdown Campus",
+      "title": "Coffee & Connections",
+      "tag": "Networking",
+      "id": "ev4",
+      "image": "/events/illustrations/networking-coffee.svg",
+      "description": "Drop by for a casual coffee, meet the committee and find a study buddy for the semester.",
+      "category": "networking"
+    },
+    {
+      "time": "4:00 PM – 6:00 PM",
+      "featured": false,
+      "date": "25 Nov 2026",
+      "location": "Susan Wakil Health Building, Seminar Room 208",
+      "title": "The Great Stats Challenge",
+      "tag": "Social",
+      "id": "ev5",
+      "image": "/events/illustrations/stats-challenge.svg",
+      "description": "Team up to solve playful data puzzles and compete for bragging rights and small prizes.",
+      "category": "social"
+    },
+    {
+      "time": "1:00 PM – 3:00 PM",
+      "featured": false,
+      "date": "2 Dec 2026",
+      "location": "Carslaw Learning Hub, Lab 3",
+      "title": "Intro to R: Data in Practice",
+      "tag": "Workshop",
+      "id": "ev6",
+      "image": "/events/illustrations/student-collaboration.svg",
+      "description": "Get started with R by exploring a real dataset and learning a few essential analysis workflows.",
+      "category": "workshop"
+    }
+  ],
   "hero": {
     "title": "Our Events",
     "subtitle": "Explore upcoming workshops, networking opportunities, social gatherings and past events with StatSoc."
   },
   "filters": [
-    { "id": "all", "label": "All Events", "value": "all" },
-    { "id": "social", "label": "Social", "value": "social" },
-    { "id": "workshop", "label": "Workshops", "value": "workshop" },
-    { "id": "careers", "label": "Careers", "value": "careers" },
-    { "id": "networking", "label": "Networking", "value": "networking" }
-  ],
-  "events": [
     {
-      "id": "ev1",
-      "title": "StatSoc Welcome Social",
-      "description": "Meet fellow statistics and data science students over snacks, games and a relaxed evening on campus.",
-      "date": "29 Oct 2026",
-      "time": "5:30 PM – 7:30 PM",
-      "location": "Manning Bar, University of Sydney",
-      "tag": "Social",
-      "category": "social",
-      "featured": true,
-      "image": "/events/illustrations/social-gathering.svg"
+      "id": "all",
+      "label": "All Events",
+      "value": "all"
     },
     {
-      "id": "ev2",
-      "title": "Data Visualisation Workshop",
-      "description": "Turn raw data into clear, compelling stories in this beginner-friendly hands-on workshop.",
-      "date": "5 Nov 2026",
-      "time": "2:00 PM – 4:00 PM",
-      "location": "Carslaw Lecture Theatre 157",
-      "tag": "Workshop",
-      "category": "workshop",
-      "featured": true,
-      "image": "/events/illustrations/workshop-data.svg"
+      "id": "social",
+      "label": "Social",
+      "value": "social"
     },
     {
-      "id": "ev3",
-      "title": "Careers in Analytics Panel",
-      "description": "Hear how graduates use statistics in consulting, technology, health and the public sector.",
-      "date": "12 Nov 2026",
-      "time": "6:00 PM – 7:30 PM",
-      "location": "Abercrombie Business School, Room 2130",
-      "tag": "Careers",
-      "category": "careers",
-      "featured": true,
-      "image": "/events/illustrations/careers-panel.svg"
+      "id": "workshop",
+      "label": "Workshops",
+      "value": "workshop"
     },
     {
-      "id": "ev4",
-      "title": "Coffee & Connections",
-      "description": "Drop by for a casual coffee, meet the committee and find a study buddy for the semester.",
-      "date": "18 Nov 2026",
-      "time": "10:30 AM – 12:00 PM",
-      "location": "Courtyard Café, Camperdown Campus",
-      "tag": "Networking",
-      "category": "networking",
-      "featured": false,
-      "image": "/events/illustrations/networking-coffee.svg"
+      "id": "careers",
+      "label": "Careers",
+      "value": "careers"
     },
     {
-      "id": "ev5",
-      "title": "The Great Stats Challenge",
-      "description": "Team up to solve playful data puzzles and compete for bragging rights and small prizes.",
-      "date": "25 Nov 2026",
-      "time": "4:00 PM – 6:00 PM",
-      "location": "Susan Wakil Health Building, Seminar Room 208",
-      "tag": "Social",
-      "category": "social",
-      "featured": false,
-      "image": "/events/illustrations/stats-challenge.svg"
-    },
-    {
-      "id": "ev6",
-      "title": "Intro to R: Data in Practice",
-      "description": "Get started with R by exploring a real dataset and learning a few essential analysis workflows.",
-      "date": "2 Dec 2026",
-      "time": "1:00 PM – 3:00 PM",
-      "location": "Carslaw Learning Hub, Lab 3",
-      "tag": "Workshop",
-      "category": "workshop",
-      "featured": false,
-      "image": "/events/illustrations/student-collaboration.svg"
+      "id": "networking",
+      "label": "Networking",
+      "value": "networking"
     }
-  ],
-  "pastHeading": "Past Events",
-  "pastSubheading": "Take a look back at the events and memories we've shared.",
-  "pastEvents": [
-    { "id": "past-welcome-2026", "title": "Semester One Welcome Social", "description": "A relaxed start to the semester with games, snacks and new connections.", "date": "12 Mar 2026", "tag": "Social" },
-    { "id": "past-data-workshop-2026", "title": "Data Visualisation Workshop", "description": "An afternoon of practical data storytelling and visualisation.", "date": "23 Apr 2026", "tag": "Workshop" },
-    { "id": "past-careers-panel-2026", "title": "Analytics Careers Panel", "description": "Students met graduates working across analytics and data science.", "date": "21 May 2026", "tag": "Careers" }
   ],
   "past_event_galleries": [
     {
@@ -101,12 +168,42 @@
       "tag": "Social",
       "attendees": "48",
       "photos": [
-        { "id": "welcome-1", "src": "/events/illustrations/social-gathering.svg", "alt": "Illustration of students meeting at the StatSoc welcome social", "span": "wide" },
-        { "id": "welcome-2", "src": "/events/illustrations/networking-coffee.svg", "alt": "Illustration of students chatting and making connections", "span": "square" },
-        { "id": "welcome-3", "src": "/events/illustrations/student-collaboration.svg", "alt": "Illustration of a lively campus gathering", "span": "tall" },
-        { "id": "welcome-4", "src": "/events/illustrations/stats-challenge.svg", "alt": "Illustration of students enjoying an activity together", "span": "square" },
-        { "id": "welcome-5", "src": "/events/illustrations/social-gathering.svg", "alt": "Illustration of a candid moment from the social", "span": "square" },
-        { "id": "welcome-6", "src": "/events/illustrations/networking-coffee.svg", "alt": "Illustration of friends spending time together", "span": "square" }
+        {
+          "id": "welcome-1",
+          "src": "/events/illustrations/social-gathering.svg",
+          "alt": "Illustration of students meeting at the StatSoc welcome social",
+          "span": "wide"
+        },
+        {
+          "id": "welcome-2",
+          "src": "/events/illustrations/networking-coffee.svg",
+          "alt": "Illustration of students chatting and making connections",
+          "span": "square"
+        },
+        {
+          "id": "welcome-3",
+          "src": "/events/illustrations/student-collaboration.svg",
+          "alt": "Illustration of a lively campus gathering",
+          "span": "tall"
+        },
+        {
+          "id": "welcome-4",
+          "src": "/events/illustrations/stats-challenge.svg",
+          "alt": "Illustration of students enjoying an activity together",
+          "span": "square"
+        },
+        {
+          "id": "welcome-5",
+          "src": "/events/illustrations/social-gathering.svg",
+          "alt": "Illustration of a candid moment from the social",
+          "span": "square"
+        },
+        {
+          "id": "welcome-6",
+          "src": "/events/illustrations/networking-coffee.svg",
+          "alt": "Illustration of friends spending time together",
+          "span": "square"
+        }
       ]
     },
     {
@@ -118,12 +215,42 @@
       "tag": "Workshop",
       "attendees": "32",
       "photos": [
-        { "id": "workshop-1", "src": "/events/illustrations/workshop-data.svg", "alt": "Illustration of students taking part in a data workshop", "span": "wide" },
-        { "id": "workshop-2", "src": "/events/illustrations/student-collaboration.svg", "alt": "Illustration of a workshop in progress", "span": "square" },
-        { "id": "workshop-3", "src": "/events/illustrations/stats-challenge.svg", "alt": "Illustration of students collaborating on an exercise", "span": "tall" },
-        { "id": "workshop-4", "src": "/events/illustrations/careers-panel.svg", "alt": "Illustration of a presenter sharing ideas with students", "span": "square" },
-        { "id": "workshop-5", "src": "/events/illustrations/workshop-data.svg", "alt": "Illustration of participants discussing their work", "span": "square" },
-        { "id": "workshop-6", "src": "/events/illustrations/student-collaboration.svg", "alt": "Illustration of a team working through a data challenge", "span": "square" }
+        {
+          "id": "workshop-1",
+          "src": "/events/illustrations/workshop-data.svg",
+          "alt": "Illustration of students taking part in a data workshop",
+          "span": "wide"
+        },
+        {
+          "id": "workshop-2",
+          "src": "/events/illustrations/student-collaboration.svg",
+          "alt": "Illustration of a workshop in progress",
+          "span": "square"
+        },
+        {
+          "id": "workshop-3",
+          "src": "/events/illustrations/stats-challenge.svg",
+          "alt": "Illustration of students collaborating on an exercise",
+          "span": "tall"
+        },
+        {
+          "id": "workshop-4",
+          "src": "/events/illustrations/careers-panel.svg",
+          "alt": "Illustration of a presenter sharing ideas with students",
+          "span": "square"
+        },
+        {
+          "id": "workshop-5",
+          "src": "/events/illustrations/workshop-data.svg",
+          "alt": "Illustration of participants discussing their work",
+          "span": "square"
+        },
+        {
+          "id": "workshop-6",
+          "src": "/events/illustrations/student-collaboration.svg",
+          "alt": "Illustration of a team working through a data challenge",
+          "span": "square"
+        }
       ]
     },
     {
@@ -135,42 +262,43 @@
       "tag": "Careers",
       "attendees": "56",
       "photos": [
-        { "id": "careers-1", "src": "/events/illustrations/careers-panel.svg", "alt": "Illustration of panelists sharing career insights", "span": "wide" },
-        { "id": "careers-2", "src": "/events/illustrations/workshop-data.svg", "alt": "Illustration of students listening to a careers discussion", "span": "square" },
-        { "id": "careers-3", "src": "/events/illustrations/networking-coffee.svg", "alt": "Illustration of students connecting with industry guests", "span": "tall" },
-        { "id": "careers-4", "src": "/events/illustrations/student-collaboration.svg", "alt": "Illustration of a small group discussing career pathways", "span": "square" },
-        { "id": "careers-5", "src": "/events/illustrations/social-gathering.svg", "alt": "Illustration of networking after the panel", "span": "square" },
-        { "id": "careers-6", "src": "/events/illustrations/stats-challenge.svg", "alt": "Illustration of guests and students meeting at the event", "span": "square" }
+        {
+          "id": "careers-1",
+          "src": "/events/illustrations/careers-panel.svg",
+          "alt": "Illustration of panelists sharing career insights",
+          "span": "wide"
+        },
+        {
+          "id": "careers-2",
+          "src": "/events/illustrations/workshop-data.svg",
+          "alt": "Illustration of students listening to a careers discussion",
+          "span": "square"
+        },
+        {
+          "id": "careers-3",
+          "src": "/events/illustrations/networking-coffee.svg",
+          "alt": "Illustration of students connecting with industry guests",
+          "span": "tall"
+        },
+        {
+          "id": "careers-4",
+          "src": "/events/illustrations/student-collaboration.svg",
+          "alt": "Illustration of a small group discussing career pathways",
+          "span": "square"
+        },
+        {
+          "id": "careers-5",
+          "src": "/events/illustrations/social-gathering.svg",
+          "alt": "Illustration of networking after the panel",
+          "span": "square"
+        },
+        {
+          "id": "careers-6",
+          "src": "/events/illustrations/stats-challenge.svg",
+          "alt": "Illustration of guests and students meeting at the event",
+          "span": "square"
+        }
       ]
     }
-  ],
-  "pageLabels": {
-    "filterBadge": "All Events",
-    "upcomingHeading": "Upcoming Events",
-    "upcomingDescription": "Find your next favourite thing to do with StatSoc.",
-    "upcomingEmptyHeading": "New events are on the way",
-    "upcomingEmptyText": "Check back soon for the next StatSoc get-together.",
-    "pastEyebrow": "A look back",
-    "galleryButton": "View photo gallery",
-    "galleryCountSuffix": "photos",
-    "ctaHref": "/newsletter",
-    "backToEvents": "Back to Events",
-    "galleryDescriptionPrefix": "A few moments from the day, captured by the StatSoc community.",
-    "galleryHeading": "Event Gallery",
-    "gallerySelectionHint": "moments — select a photo to explore the gallery",
-    "backCtaText": "Want to see what's coming up next?",
-    "backCtaButton": "Back to all events",
-    "eventNotFound": "Event not found.",
-    "photoCollageAlt": "Event photo collage",
-    "photoViewPrefix": "View photo:",
-    "closePhoto": "Close photo viewer",
-    "previousPhoto": "Previous photo",
-    "nextPhoto": "Next photo",
-    "goToPhotoPrefix": "Go to photo"
-  },
-  "cta": {
-    "heading": "Stay Connected with StatSoc",
-    "body": "Don't miss our upcoming events, opportunities and community updates.",
-    "button": "Read Our Newsletter"
-  }
+  ]
 }
