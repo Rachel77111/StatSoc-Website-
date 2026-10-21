@@ -55,18 +55,6 @@
   "pastSubheading": "Take a look back at the events and memories we've shared.",
   "events": [
     {
-      "time": "6:00pm - 8:00pm ",
-      "featured": true,
-      "date": "30 Oct 2026",
-      "location": "BHB, University of Sydney",
-      "title": "StatSoc Speed Friendly ",
-      "tag": "Social",
-      "id": "ev1",
-      "image": "/uploads/events/847858945_1504456644841569_3043628350883354851_n.jpg",
-      "description": "Meet fellow statistics and data science students over snacks, games and a relaxed evening on campus. Most importantly, make new friends!!!",
-      "category": "social"
-    },
-    {
       "time": "7:00pm - 2:00am ",
       "featured": true,
       "date": "29 Nov 2026",
@@ -77,6 +65,18 @@
       "image": "/uploads/events/statsoc-newsletter-1.png",
       "description": "Expect a great night of music, drinks, socialising and good vibes as we move from venue to venue together. 🍻✨\n\n🎟️ Ticket Prices\nEarly Bird — $5\nGeneral — $8\nFinal Release — $10\n\nYour ticket gives you access to the event, plus exclusive links and offers available only to attendees. Please note that selected links may be unique to each ticket holder and should not be shared.\n\nGet the ticket: https://events.humanitix.com/sudata-x-statsoc-x-pmsoc-x-suede-pubcrawl",
       "category": "workshop"
+    },
+    {
+      "time": "6:00pm - 8:00pm ",
+      "featured": true,
+      "date": "30 Oct 2026",
+      "location": "BHB, University of Sydney",
+      "title": "StatSoc Speed Friendly ",
+      "tag": "Social",
+      "id": "ev1",
+      "image": "/uploads/events/847858945_1504456644841569_3043628350883354851_n.jpg",
+      "description": "Meet fellow statistics and data science students over snacks, games and a relaxed evening on campus. Most importantly, make new friends!!!",
+      "category": "social"
     },
     {
       "time": "6:00 PM – 7:30 PM",
