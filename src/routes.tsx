@@ -10,8 +10,13 @@ import NewsletterPage from './pages/newsletter';
 import NotFoundPage from './pages/_404';
 import FunPage from './pages/fun';
 import AdminEditorRedirect from './pages/admin/editor';
+import TeamPage from './pages/team';
 
 export const routes: RouteObject[] = [
+  {
+    path: '/team',
+    element: <TeamPage />,
+  },
   {
     path: '/admin',
     element: <AdminEditorRedirect />,
@@ -51,6 +56,7 @@ export const routes: RouteObject[] = [
 ];
 
 export type Path =
+  | '/team'
   | '/'
   | '/events'
   | '/opportunities'

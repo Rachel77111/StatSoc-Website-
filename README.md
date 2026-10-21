@@ -8,6 +8,8 @@ Install dependencies with `npm ci`, start the development server with `npm run d
 
 ## Event content editor (Decap CMS)
 
+The **Meet our team** page is available at `/team`. In the editor, open **Website pages → Meet our team** to add member names, photos, taglines and role descriptions. Names and photos are initially blank; the page displays role illustrations until photos are added. Roles are grouped into **The Big Four** and **Directors**.
+
 The editor is served at `/admin/`. It manages `content/events.json`; event images and past-event gallery photos uploaded in the editor are committed under `public/uploads/events/`. The site reads the generated `/content/events.json` at runtime, so CMS edits become visible after the deployment finishes.
 
 This project uses Decap CMS with GitHub login and Netlify's built-in OAuth service. It does not use Netlify Identity or the deprecated Git Gateway. To enable authentication and publishing:

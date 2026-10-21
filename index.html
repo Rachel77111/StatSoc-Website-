@@ -16,6 +16,7 @@
     <meta name="referrer" content="same-origin" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!--app-head-->
     <script src="/airo-video-slots.js"></script>
     <script src="/airo-logo-orientation.js"></script>
@@ -24,5 +25,14 @@
     <div id="app" class="fs-unmask-airo-app-builder"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
     <script src="/analytics.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', (user) => {
+          if (!user && window.location.hash.includes('invite_token')) {
+            window.netlifyIdentity.open('signup');
+          }
+        });
+      }
+    </script>
   </body>
 </html>

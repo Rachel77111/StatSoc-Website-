@@ -3,8 +3,8 @@ backend:
   repo: Rachel77111/StatSoc-Website-
   branch: main
 
-site_url: https://statsoc.sydney.edu.au
-display_url: https://statsoc.sydney.edu.au
+site_url: https://6ad8c1a196ab24eedf0848a0--usydstatsoc.netlify.app
+display_url: https://6ad8c1a196ab24eedf0848a0--usydstatsoc.netlify.app
 local_backend: false
 publish_mode: simple
 media_folder: public/uploads/events
@@ -137,6 +137,26 @@ collections:
     label: Website pages
     description: Edit page text, images, links and repeatable lists. The layout and design stay fixed.
     files:
+      - name: team
+        label: Meet our team
+        file: content/team.json
+        format: json
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - label: Team roles
+            name: roles
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Unique ID, name: id, widget: string }
+              - { label: Role title, name: title, widget: string }
+              - { label: Group, name: group, widget: select, options: [big-four, directors] }
+              - { label: Member name or names, name: name, widget: string, required: false }
+              - { label: Photo, name: image, widget: image, required: false }
+              - { label: Short tagline, name: tagline, widget: string }
+              - { label: Role description, name: description, widget: text }
+              - { label: Focus label, name: focus, widget: string }
       - name: home
         label: Homepage
         file: content/home.json
