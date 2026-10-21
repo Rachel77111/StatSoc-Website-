@@ -4,6 +4,7 @@ import { motion, useInView } from 'motion/react';
 import { Calendar, Clock, MapPin, ChevronLeft, ChevronRight, Images } from 'lucide-react';
 import { Link } from 'react-router';
 import { useEventsContent } from '@/lib/use-events-content';
+import { getEventCategory } from '@/lib/event-category';
 
 
 const tagColours: Record<string, { bg: string; text: string }> = {
@@ -47,7 +48,7 @@ export default function EventsPage() {
   const { past_event_galleries } = content;
   const filteredEvents = activeFilter === 'all'
     ? content.events
-    : content.events.filter((event) => event.category === activeFilter);
+    : content.events.filter((event) => getEventCategory(event) === activeFilter.trim().toLowerCase());
 
   return (
     <>
