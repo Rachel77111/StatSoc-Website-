@@ -48,7 +48,17 @@
   "archive": {
     "heading": "Newsletter Archive",
     "description": "Browse our PDF editions. Open an issue in your browser or save it for later.",
-    "issues": []
+    "issues": [
+      {
+        "id": "NS1",
+        "date": "19 Oct 2026",
+        "title": "Newsletter Edition#1",
+        "preview": "✨ Here's what's inside our first edition:\n\n🎉 Event Recap: Relive the highlights of our recent Speed Friending event!\n\n🎃 Upcoming Events: Get ready for our Halloween Party on 29 October, featuring a pub crawl and exciting perks!\n\n📊 Curiosity Corner: Discover why correlation doesn't always mean causation, and learn a handy Python trick using value_counts()!",
+        "href": "/uploads/newsletters/statsoc-newsletter-1.pdf",
+        "cover": "/uploads/newsletters/statsoc-newsletter-1.png",
+        "tag": "Newsletter"
+      }
+    ]
   },
   "bottomCta": {
     "heading": "Ready to stay in the loop?",
