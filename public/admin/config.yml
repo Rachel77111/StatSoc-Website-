@@ -287,77 +287,25 @@ collections:
             fields:
               - { label: Heading, name: title, widget: string }
               - { label: Description, name: subtitle, widget: text }
-          - label: Subscribe section
-            name: subscribeSection
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Button text, name: buttonLabel, widget: string }
-              - { label: Email placeholder, name: emailPlaceholder, widget: string }
-              - { label: Privacy note, name: privacyNote, widget: text }
-              - { label: Success heading, name: successHeading, widget: string }
-              - { label: Success message, name: successBody, widget: text }
-          - label: What is inside
-            name: whatsInside
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - label: Items
-                name: items
-                widget: list
-                summary: '{{fields.title}}'
-                fields:
-                  - { label: Internal ID (leave unchanged), name: id, widget: string }
-                  - label: Icon
-                    name: icon
-                    widget: select
-                    options: [Calendar, Briefcase, BarChart2, BookOpen]
-                  - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
-          - label: Community quotes
-            name: socialProof
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - label: Quotes
-                name: quotes
-                widget: list
-                fields:
-                  - { label: Internal ID, name: id, widget: string }
-                  - { label: Quote, name: text, widget: text }
-                  - { label: Name, name: name, widget: string }
-                  - { label: Year or role, name: year, widget: string }
           - label: Newsletter archive
             name: archive
             widget: object
             fields:
               - { label: Heading, name: heading, widget: string }
               - { label: Description, name: description, widget: text }
-              - label: Issues
+              - label: Issues (latest first)
+                hint: Put the newest edition first. Once email automation is enabled, publishing a new issue ID automatically queues emails to confirmed subscribers.
                 name: issues
                 widget: list
                 summary: '{{fields.title}}'
                 fields:
-                  - { label: Internal ID, name: id, widget: string }
+                  - { label: Unique issue ID, name: id, widget: string, pattern: ["^[a-zA-Z0-9_-]{1,100}$", "Use letters, numbers, hyphens or underscores."], hint: Use a new ID for each edition. Keep it unchanged when correcting an existing issue to avoid resending. }
                   - { label: Category, name: tag, widget: string }
                   - { label: Date, name: date, widget: string }
                   - { label: Title, name: title, widget: string }
                   - { label: Summary, name: preview, widget: text }
-                  - { label: Read link, name: href, widget: string, required: false }
-          - label: Bottom banner
-            name: bottomCta
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Text, name: body, widget: text }
-              - { label: Button text, name: button, widget: string }
-              - { label: Button link, name: href, widget: string }
-          - label: Display labels
-            name: labels
-            widget: object
-            fields:
-              - { label: Newsletter issue link label, name: readIssue, widget: string }
+                  - { label: Newsletter PDF, name: href, widget: file, media_folder: public/uploads/newsletters, public_folder: /uploads/newsletters, hint: Upload the PDF you send by email. }
+                  - { label: Cover image, name: cover, widget: image, required: false, media_folder: public/uploads/newsletters, public_folder: /uploads/newsletters }
 
       - name: opportunities
         label: Opportunities page

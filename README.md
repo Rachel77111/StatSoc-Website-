@@ -28,3 +28,15 @@ For local CMS UI testing, run `npm run dev` and open `/admin/index.html`. Use th
 If login fails, confirm the OAuth provider is installed on the correct Netlify project and the callback URL matches exactly. Open the editor using the deployed project's domain, allow the login popup, and verify the GitHub account has repository write access. The existing `site_url` and `display_url` point to `https://statsoc.sydney.edu.au`; update them if your final public domain differs.
 
 Setup references: [Decap GitHub backend](https://decapcms.org/docs/github-backend/) and [Netlify OAuth provider setup](https://docs.netlify.com/manage/security/secure-access-to-sites/oauth-provider-tokens/).
+
+## PDF newsletter archive
+
+In the admin editor, open **Website pages → Newsletter page → Issues (latest first)**. Add an issue with a unique ID, title, date (including the year), category and short summary. Upload the newsletter PDF and optionally a cover image. Put the newest edition first; it becomes the featured latest edition. Publish and wait for the deployment to finish. Files are stored under `public/uploads/newsletters/`. The page includes search and a year filter. For externally hosted PDFs, download behaviour depends on the file host; uploaded same-site PDFs support the download link.
+
+## Automatic newsletter subscriptions (Google)
+
+Visitors subscribe on `/newsletter` and confirm by email. A private Google Sheet stores subscriptions and delivery records. Google Apps Script checks the deployed PDF archive every 15 minutes and emails confirmed subscribers a link to each new edition. Google Groups is no longer used for website subscriptions.
+
+**Setup is required before this works:** follow [the Google newsletter setup guide](google/newsletter/README.md). The website returns an unavailable message until the server credentials are configured. Do not place subscriber emails or credentials in Git or public content files.
+
+Run local backend checks with `node --test tests/newsletter.test.mjs`. These mock Google services; perform the live acceptance checklist in the setup guide before inviting subscribers.

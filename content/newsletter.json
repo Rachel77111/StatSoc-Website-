@@ -1,17 +1,62 @@
 {
-  "hero": { "title": "The StatSoc Newsletter", "subtitle": "Stay connected with the latest events, career opportunities, workshops and updates from the Statistics Society at the University of Sydney." },
-  "subscribeSection": { "heading": "Subscribe to Our Newsletter", "description": "Stay up to date with StatSoc events, opportunities and community news.", "buttonLabel": "Subscribe", "emailPlaceholder": "your.name@student.sydney.edu.au", "privacyNote": "Subscription functionality is being set up. Please check back soon.", "successHeading": "You're on the list!", "successBody": "Check your inbox for a confirmation email." },
+  "hero": {
+    "title": "The StatSoc Newsletter",
+    "subtitle": "The StatSoc newsletters you know from your inbox, all in one place. Read each edition as a PDF or download a copy for later."
+  },
+  "subscribeSection": {
+    "heading": "Subscribe to Our Newsletter",
+    "description": "Stay up to date with StatSoc events, opportunities and community news.",
+    "buttonLabel": "Subscribe",
+    "emailPlaceholder": "your.name@student.sydney.edu.au",
+    "privacyNote": "Subscription functionality is being set up. Please check back soon.",
+    "successHeading": "You're on the list!",
+    "successBody": "Check your inbox for a confirmation email."
+  },
   "whatsInside": {
     "heading": "What's Inside?",
     "items": [
-      { "id": "1", "icon": "Calendar", "title": "Upcoming Events", "description": "Discover our upcoming social events, workshops and networking activities." },
-      { "id": "2", "icon": "Briefcase", "title": "Career Opportunities", "description": "Explore internships, graduate programs and professional opportunities." },
-      { "id": "3", "icon": "BarChart2", "title": "Statistics & Data Science", "description": "Explore interesting topics, insights and developments in statistics and data science." },
-      { "id": "4", "icon": "BookOpen", "title": "Academic Resources", "description": "Find useful learning resources and opportunities for academic development." }
+      {
+        "id": "1",
+        "icon": "Calendar",
+        "title": "Upcoming Events",
+        "description": "Discover our upcoming social events, workshops and networking activities."
+      },
+      {
+        "id": "2",
+        "icon": "Briefcase",
+        "title": "Career Opportunities",
+        "description": "Explore internships, graduate programs and professional opportunities."
+      },
+      {
+        "id": "3",
+        "icon": "BarChart2",
+        "title": "Statistics & Data Science",
+        "description": "Explore interesting topics, insights and developments in statistics and data science."
+      },
+      {
+        "id": "4",
+        "icon": "BookOpen",
+        "title": "Academic Resources",
+        "description": "Find useful learning resources and opportunities for academic development."
+      }
     ]
   },
-  "socialProof": { "heading": "From Our Community", "quotes": [] },
-  "archive": { "heading": "Newsletter Archive", "description": "Browse previous editions of the StatSoc newsletter.", "issues": [] },
-  "bottomCta": { "heading": "Ready to stay in the loop?", "body": "Join hundreds of stats students getting the best of StatSoc delivered fortnightly.", "button": "Subscribe now", "href": "#top" },
-  "labels": { "readIssue": "Read issue" }
+  "socialProof": {
+    "heading": "From Our Community",
+    "quotes": []
+  },
+  "archive": {
+    "heading": "Newsletter Archive",
+    "description": "Browse our PDF editions. Open an issue in your browser or save it for later.",
+    "issues": []
+  },
+  "bottomCta": {
+    "heading": "Ready to stay in the loop?",
+    "body": "Join hundreds of stats students getting the best of StatSoc delivered fortnightly.",
+    "button": "Subscribe now",
+    "href": "#top"
+  },
+  "labels": {
+    "readIssue": "Read issue"
+  }
 }
