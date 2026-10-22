@@ -47,9 +47,9 @@ Commit and push the application code and redeploy Netlify. The function lives in
 ## 4. Test with your own address first
 
 1. Visit the deployed `/newsletter`, enter your email, tick consent, and submit. You should see a pending confirmation message, not an assertion that you are already subscribed.
-2. In the sheet, check your row is **pending**. Wait for the trigger or run `processNewsletterQueue` manually. Check your inbox/spam folder.
+2. In the sheet, check your row is **pending**. The signup immediately attempts to send a confirmation. Check your inbox/spam folder. If sending capacity is exhausted, the scheduled queue sends it later.
 3. Open the confirmation link and press **Confirm subscription**. Check the row changes to **confirmed**. Merely opening a link does not change membership, to avoid email scanner activations.
-4. Upload a real PDF under **Admin → Website pages → Newsletter page**. Give the issue a unique ID such as `2026-11`, put it first and publish. Wait for the Netlify deployment to complete.
+4. Upload a real PDF under **Admin → Newsletter → Newsletter page**. Give the issue a unique ID such as `2026-11`, put it first and publish. Wait for the Netlify deployment to complete.
 5. Run `processNewsletterQueue` or wait for its next scheduled run. Check the email, PDF link, and **sent** delivery record.
 6. Run again: the same issue must not send a second time. Edit its title with the same ID and publish: it still must not resend.
 7. Open the unsubscribe link and press **Unsubscribe**. The subscriber becomes **unsubscribed**. Verify they do not receive a subsequent test edition with a different ID.
@@ -64,6 +64,7 @@ These steps exercise real Google permissions and mail delivery; local tests cann
 - Emails begin only after the PDF is deployed and the script's next check runs. Publishing is the send action; there is no separate send button. The script detects the latest issue at each check, so do not publish several editions between checks if you want each to be emailed.
 - A newly confirmed subscriber receives the current latest edition on the next check. Earlier editions remain available on the website. Existing queued editions remain queued even if a newer edition is published.
 - A personal Gmail Apps Script account currently has a quota of **100 recipients per rolling daily allowance** shared across its scripts. Confirmation emails consume quota too. Quotas can change; the script checks the remaining allowance and leaves unsent jobs queued. A mailing to 100 people may span multiple days when confirmations or other scripts use the allowance.
+- Confirmation emails are attempted immediately on signup; newsletter deliveries remain on the 15-minute schedule.
 - New signup requests are capped at 50 per rolling 24 hours. Confirmation messages are capped at 20 per rolling 24 hours to limit signup abuse. Pending requests wait for capacity. Confirmation links expire seven days after requesting. The same pending address cannot repeatedly generate confirmation emails; after expiry it can request again.
 - Keep an eye on **Apps Script → Executions**, trigger failure emails and the sheet. Google mail delivery is not guaranteed; this system does not track bounces, spam placement or opens.
 

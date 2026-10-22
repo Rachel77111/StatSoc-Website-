@@ -65,8 +65,26 @@ function doPost(e) {
     var newRow = [email, 'pending', token_(), new Date(), ''];
     if (existing < 0) subscribers.appendRow(newRow);
     else subscribers.getRange(existing + 2, 1, 1, newRow.length).setValues([newRow]);
+    // Send only the new signup's confirmation while the signup lock is held.
+    try { sendConfirmation_(subscribers, rows_(subscribers), existing < 0 ? subscribers.getLastRow() - 2 : existing); }
+    catch (_) { console.warn('Confirmation send failed; inspect confirmationSentAt before retrying.'); }
     return json_({ accepted: true });
   } finally { lock.releaseLock(); }
+}
+
+
+// Shared by signup and the scheduled queue; caller holds the script lock.
+function sendConfirmation_(subscribers, people, index) {
+  var pending = people[index];
+  if (!pending || pending[1] !== 'pending' || pending[4] || Date.now() - new Date(pending[3]).getTime() > 7 * 86400000) return;
+  var sentRecently = people.filter(function(row) { return row[4] && Date.now() - new Date(row[4]).getTime() < 86400000; }).length;
+  if (sentRecently >= 20 || MailApp.getRemainingDailyQuota() < 1) return;
+  var confirmation = link_('confirm', pending[2]);
+  // Persist before sending so timeout/retry cannot duplicate the confirmation.
+  pending[4] = new Date();
+  subscribers.getRange(index + 2, 5).setValue(pending[4]);
+  SpreadsheetApp.flush();
+  MailApp.sendEmail({ to: pending[0], subject: 'Confirm your StatSoc newsletter subscription', name: 'StatSoc', replyTo: 'statsoc.sydney@gmail.com', body: 'Confirm your subscription: ' + confirmation + '\n\nThis link expires seven days after signup. If you did not request this, ignore this email; you will not receive newsletters.' });
 }
 
 function latestIssue_() {
@@ -127,16 +145,9 @@ function processNewsletterQueue() {
         deliveries.getRange(i + 2, 6, 1, 2).setValues([['sent', new Date()]]);
       } catch (_) { deliveries.getRange(i + 2, 6).setValue('review'); }
     }
-    // Limit confirmation mail to 20 per rolling 24 hours, leaving room for newsletter delivery.
-    var sentRecently = people.filter(function(row) { return row[4] && Date.now() - new Date(row[4]).getTime() < 86400000; }).length;
     for (var n = 0; n < people.length; n++) {
-      if (sentRecently >= 20 || MailApp.getRemainingDailyQuota() < 1 || Date.now() - started > 240000) break;
-      var pending = people[n];
-      if (pending[1] !== 'pending' || pending[4] || Date.now() - new Date(pending[3]).getTime() > 7 * 86400000) continue;
-      var confirmation = link_('confirm', pending[2]);
-      // Stamp before send to avoid repeated confirmations after a crash.
-      subscribers.getRange(n + 2, 5).setValue(new Date()); SpreadsheetApp.flush(); sentRecently++;
-      MailApp.sendEmail({ to: pending[0], subject: 'Confirm your StatSoc newsletter subscription', name: 'StatSoc', replyTo: 'statsoc.sydney@gmail.com', body: 'Confirm your subscription: ' + confirmation + '\n\nThis link expires seven days after signup. If you did not request this, ignore this email; you will not receive newsletters.' });
+      if (MailApp.getRemainingDailyQuota() < 1 || Date.now() - started > 240000) break;
+      sendConfirmation_(subscribers, people, n);
     }
   } finally { lock.releaseLock(); }
 }

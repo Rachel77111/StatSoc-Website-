@@ -31,7 +31,7 @@ Setup references: [Decap GitHub backend](https://decapcms.org/docs/github-backen
 
 ## PDF newsletter archive
 
-In the admin editor, open **Website pages → Newsletter page → Issues (latest first)**. Add an issue with a unique ID, title, date (including the year), category and short summary. Upload the newsletter PDF and optionally a cover image. Put the newest edition first; it becomes the featured latest edition. Publish and wait for the deployment to finish. Files are stored under `public/uploads/newsletters/`. The page includes search and a year filter. For externally hosted PDFs, download behaviour depends on the file host; uploaded same-site PDFs support the download link.
+In the admin editor, open **Newsletter → Newsletter page → Issues (latest first)**. Add an issue with a unique ID, title, date (including the year), category and short summary. Upload the newsletter PDF and optionally a cover image. Put the newest edition first; it becomes the featured latest edition. Publish and wait for the deployment to finish. Files are stored under `public/uploads/newsletters/`. The page includes search and a year filter. For externally hosted PDFs, download behaviour depends on the file host; uploaded same-site PDFs support the download link.
 
 ## Automatic newsletter subscriptions (Google)
 

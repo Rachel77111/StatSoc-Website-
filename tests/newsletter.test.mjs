@@ -51,8 +51,9 @@ test('confirmation, consent, duplicate signup, unsubscribe and send deduplicatio
   h.post({ secret: 'secret', consent: true, email: 'a@example.com' });
   const people = h.sheets.get('Subscribers').data;
   assert.equal(people.length, 2);
+  assert.equal(h.sent.length, 1); // Signup sends confirmation immediately.
   h.context.processNewsletterQueue();
-  assert.equal(h.sent.length, 1); // Confirmation only.
+  assert.equal(h.sent.length, 1); // No duplicate on the scheduled run.
   const token = people[1][2];
   h.context.doGet({ parameter: { action: 'confirm', token } });
   assert.equal(people[1][1], 'pending'); // Link scanners cannot confirm.
@@ -69,6 +70,7 @@ test('confirmation, consent, duplicate signup, unsubscribe and send deduplicatio
 
 test('exhausted quota keeps deliveries queued and preserves older issues', () => {
   const h = googleHarness();
+  h.setQuota(0);
   h.post({ secret: 'secret', consent: true, email: 'a@example.com' });
   const person = h.sheets.get('Subscribers').data[1];
   h.context.doPost({ parameter: { action: 'confirm', token: person[2] } });
@@ -91,7 +93,7 @@ test('ambiguous email failures require review and are not automatically resent',
   assert.equal(h.sheets.get('Deliveries').data[1][5], 'review');
   h.context.MailApp.sendEmail = mail => h.sent.push(mail);
   h.context.processNewsletterQueue();
-  assert.equal(h.sent.length, 0);
+  assert.equal(h.sent.length, 1); // Only the immediate confirmation.
 });
 
 test('Netlify proxy rejects invalid requests and never exposes shared credentials', async () => {
@@ -119,4 +121,16 @@ test('Netlify proxy rejects invalid requests and never exposes shared credential
       if (previous[key] === undefined) delete process.env[key]; else process.env[key] = previous[key];
     }
   }
+});
+
+test('confirmation waits for capacity when signup occurs at zero quota', () => {
+  const h = googleHarness();
+  h.setQuota(0);
+  assert.equal(h.post({ secret: 'secret', consent: true, email: 'queued@example.com' }).accepted, true);
+  assert.equal(h.sent.length, 0);
+  assert.equal(h.sheets.get('Subscribers').data[1][4], '');
+  h.setQuota(1);
+  h.context.processNewsletterQueue();
+  assert.equal(h.sent.length, 1);
+  assert.match(h.sent[0].subject, /Confirm/);
 });

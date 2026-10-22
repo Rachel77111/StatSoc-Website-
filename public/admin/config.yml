@@ -130,6 +130,46 @@ collections:
               - { label: Text, name: body, widget: text }
               - { label: Button text, name: button, widget: string }
 
+  - name: newsletter_content
+    label: Newsletter
+    description: Upload newsletter PDFs and cover images here. Put the latest edition first.
+    media_folder: /public/uploads/newsletters
+    public_folder: /uploads/newsletters
+    files:
+      - name: newsletter
+        label: Newsletter page
+        file: content/newsletter.json
+        format: json
+        media_folder: /public/uploads/newsletters
+        public_folder: /uploads/newsletters
+        fields:
+          - label: Page heading
+            name: hero
+            widget: object
+            fields:
+              - { label: Heading, name: title, widget: string }
+              - { label: Description, name: subtitle, widget: text }
+          - label: Newsletter archive
+            name: archive
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Issues (latest first)
+                hint: Put the newest edition first. Once email automation is enabled, publishing a new issue ID automatically queues emails to confirmed subscribers.
+                name: issues
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Unique issue ID, name: id, widget: string, pattern: ["^[a-zA-Z0-9_-]{1,100}$", "Use letters, numbers, hyphens or underscores."], hint: Use a new ID for each edition. Keep it unchanged when correcting an existing issue to avoid resending. }
+                  - { label: Category, name: tag, widget: string }
+                  - { label: Date, name: date, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Summary, name: preview, widget: text }
+                  - { label: Newsletter PDF, name: href, widget: file, hint: Upload the PDF you send by email. }
+                  - { label: Cover image, name: cover, widget: image, required: false }
+
+
   - name: page_content
     label: Website pages
     description: Edit page text, images, links and repeatable lists. The layout and design stay fixed.
@@ -275,37 +315,6 @@ collections:
           - { label: Video title, name: videoTitle, widget: string }
           - { label: Video file, name: videoSrc, widget: file, media_folder: public/uploads/site, public_folder: /uploads/site }
           - { label: Video unavailable message, name: videoUnavailable, widget: string }
-
-      - name: newsletter
-        label: Newsletter page
-        file: content/newsletter.json
-        format: json
-        fields:
-          - label: Page heading
-            name: hero
-            widget: object
-            fields:
-              - { label: Heading, name: title, widget: string }
-              - { label: Description, name: subtitle, widget: text }
-          - label: Newsletter archive
-            name: archive
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Description, name: description, widget: text }
-              - label: Issues (latest first)
-                hint: Put the newest edition first. Once email automation is enabled, publishing a new issue ID automatically queues emails to confirmed subscribers.
-                name: issues
-                widget: list
-                summary: '{{fields.title}}'
-                fields:
-                  - { label: Unique issue ID, name: id, widget: string, pattern: ["^[a-zA-Z0-9_-]{1,100}$", "Use letters, numbers, hyphens or underscores."], hint: Use a new ID for each edition. Keep it unchanged when correcting an existing issue to avoid resending. }
-                  - { label: Category, name: tag, widget: string }
-                  - { label: Date, name: date, widget: string }
-                  - { label: Title, name: title, widget: string }
-                  - { label: Summary, name: preview, widget: text }
-                  - { label: Newsletter PDF, name: href, widget: file, media_folder: public/uploads/newsletters, public_folder: /uploads/newsletters, hint: Upload the PDF you send by email. }
-                  - { label: Cover image, name: cover, widget: image, required: false, media_folder: public/uploads/newsletters, public_folder: /uploads/newsletters }
 
       - name: opportunities
         label: Opportunities page
