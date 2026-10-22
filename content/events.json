@@ -79,15 +79,15 @@
       "category": "social"
     },
     {
-      "time": "6:00 PM – 7:30 PM",
+      "time": "6:00 PM – 8:00 PM",
       "featured": true,
-      "date": "12 Nov 2026",
-      "location": "Abercrombie Business School, Room 2130",
-      "title": "Careers in Analytics Panel",
-      "tag": "Careers",
+      "date": "18 Nov 2026",
+      "location": "BHB, Room 2130",
+      "title": "Study Session for DATA1002 ",
+      "tag": "Workshop",
       "id": "ev3",
-      "image": "/events/illustrations/careers-panel.svg",
-      "description": "Hear how graduates use statistics in consulting, technology, health and the public sector.",
+      "image": "/uploads/events/study-session.jpeg",
+      "description": "A tutor will guide you to revise for your final! ",
       "category": "careers"
     },
     {
