@@ -40,3 +40,13 @@ Visitors subscribe on `/newsletter` and confirm by email. A private Google Sheet
 **Setup is required before this works:** follow [the Google newsletter setup guide](google/newsletter/README.md). The website returns an unavailable message until the server credentials are configured. Do not place subscriber emails or credentials in Git or public content files.
 
 Run local backend checks with `node --test tests/newsletter.test.mjs`. These mock Google services; perform the live acceptance checklist in the setup guide before inviting subscribers.
+
+## Upcoming event details and registration
+
+Upcoming event cards on `/events` and the homepage open `/events/upcoming/<event-id>`. In **Admin → Events page → Events and galleries → Upcoming events**, add **Full event details**, optional **Event highlights**, **Price or admission**, and a **Registration link**. Use a full `https://` URL for the registration service. Register buttons appear on both card layouts and the detail page when a valid link is supplied; registration opens in a new tab. Without a registration link, visitors can still read the details. Keep the event ID unique and unchanged so existing detail links keep working. Publish and wait for deployment before checking changes on the live site.
+
+## Fun Stats playground
+
+The `/fun` page includes editable flip cards and three browser-only mini games: mean/median practice, a probability simulation with replacement, and correlation classification. In **Admin → Website pages → Fun page → Fun fact flashcards**, add, reorder or edit questions and answers. Use a unique ID per card. Publish and wait for deployment. The cards track reveals during the current visit; game progress resets when switching games. Mini-game rules are maintained in code. No personal data or game scores are submitted to a server.
+
+Math checks: `node --import tsx --test tests/stats-games.test.mjs`.

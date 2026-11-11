@@ -1,7 +1,7 @@
 {
   "header": {
-    "logo": "/airo-assets/images/logo/horizontal",
-    "logoAlt": "StatSoc Logo",
+    "logo": "/uploads/site/statsoc-logo-transparent.png",
+    "logoAlt": "StatSoc logo",
     "navigation": [
       {
         "label": "Home",

@@ -1,25 +1,11 @@
 {
   "pastEvents": [
     {
-      "id": "past-welcome-2026",
-      "title": "Semester One Welcome Social",
-      "description": "A relaxed start to the semester with games, snacks and new connections.",
-      "date": "12 Mar 2026",
+      "id": "ev1",
+      "title": "StatSoc Speed Friendly ",
+      "description": "Meet fellow statistics and data science students over snacks, games and a relaxed evening on campus. Most importantly, make new friends!!!",
+      "date": "30 Oct 2026",
       "tag": "Social"
-    },
-    {
-      "id": "past-data-workshop-2026",
-      "title": "Data Visualisation Workshop",
-      "description": "An afternoon of practical data storytelling and visualisation.",
-      "date": "23 Apr 2026",
-      "tag": "Workshop"
-    },
-    {
-      "id": "past-careers-panel-2026",
-      "title": "Analytics Careers Panel",
-      "description": "Students met graduates working across analytics and data science.",
-      "date": "21 May 2026",
-      "tag": "Careers"
     }
   ],
   "pageLabels": {
@@ -57,26 +43,27 @@
     {
       "time": "7:00pm - 2:00am ",
       "featured": true,
-      "date": "29 Nov 2026",
+      "date": "29 Oct 2026",
       "location": "Side Bar, Shark Hotel, IVY ",
       "title": "PubCrawl ",
       "tag": "Social",
       "id": "ev2",
       "image": "/uploads/events/statsoc-newsletter-1.png",
-      "description": "Expect a great night of music, drinks, socialising and good vibes as we move from venue to venue together. 🍻✨\n\n🎟️ Ticket Prices\nEarly Bird — $5\nGeneral — $8\nFinal Release — $10\n\nYour ticket gives you access to the event, plus exclusive links and offers available only to attendees. Please note that selected links may be unique to each ticket holder and should not be shared.\n\nGet the ticket: https://events.humanitix.com/sudata-x-statsoc-x-pmsoc-x-suede-pubcrawl",
-      "category": "workshop"
+      "description": "Expect a great night of music, drinks, socialising and good vibes as we move from venue to venue together. 🍻✨\n\n🎟️ Ticket Prices\nEarly Bird — $5\nGeneral — $8\nFinal Release — $10\n\nYour ticket gives you access to the event, plus exclusive links and offers available only to attendees. Please note that selected links may be unique to each ticket holder and should not be shared.",
+      "category": "workshop",
+      "registrationUrl": "https://events.humanitix.com/sudata-x-statsoc-x-pmsoc-x-suede-pubcrawl"
     },
     {
-      "time": "6:00pm - 8:00pm ",
-      "featured": true,
-      "date": "30 Oct 2026",
-      "location": "BHB, University of Sydney",
-      "title": "StatSoc Speed Friendly ",
-      "tag": "Social",
-      "id": "ev1",
-      "image": "/uploads/events/847858945_1504456644841569_3043628350883354851_n.jpg",
-      "description": "Meet fellow statistics and data science students over snacks, games and a relaxed evening on campus. Most importantly, make new friends!!!",
-      "category": "social"
+      "id": "agm-2026-2027",
+      "title": "AGM 2026/2027",
+      "description": "Join StatSoc for the 2026/2027 Annual General Meeting. Room details will be confirmed.",
+      "date": "4 Nov 2026",
+      "time": "7:00 PM – 8:30 PM",
+      "location": "BHB, Room TBC",
+      "tag": "Society",
+      "category": "society",
+      "featured": false,
+      "image": "/uploads/events/agm-2026-2027.png"
     },
     {
       "time": "6:00 PM – 8:00 PM",
@@ -89,42 +76,6 @@
       "image": "/uploads/events/study-session.jpeg",
       "description": "A tutor will guide you to revise for your final! ",
       "category": "careers"
-    },
-    {
-      "time": "10:30 AM – 12:00 PM",
-      "featured": false,
-      "date": "18 Nov 2026",
-      "location": "Courtyard Café, Camperdown Campus",
-      "title": "Coffee & Connections",
-      "tag": "Networking",
-      "id": "ev4",
-      "image": "/events/illustrations/networking-coffee.svg",
-      "description": "Drop by for a casual coffee, meet the committee and find a study buddy for the semester.",
-      "category": "networking"
-    },
-    {
-      "time": "4:00 PM – 6:00 PM",
-      "featured": false,
-      "date": "25 Nov 2026",
-      "location": "Susan Wakil Health Building, Seminar Room 208",
-      "title": "The Great Stats Challenge",
-      "tag": "Social",
-      "id": "ev5",
-      "image": "/events/illustrations/stats-challenge.svg",
-      "description": "Team up to solve playful data puzzles and compete for bragging rights and small prizes.",
-      "category": "social"
-    },
-    {
-      "time": "1:00 PM – 3:00 PM",
-      "featured": false,
-      "date": "2 Dec 2026",
-      "location": "Carslaw Learning Hub, Lab 3",
-      "title": "Intro to R: Data in Practice",
-      "tag": "Workshop",
-      "id": "ev6",
-      "image": "/events/illustrations/student-collaboration.svg",
-      "description": "Get started with R by exploring a real dataset and learning a few essential analysis workflows.",
-      "category": "workshop"
     }
   ],
   "hero": {
@@ -156,147 +107,28 @@
       "id": "networking",
       "label": "Networking",
       "value": "networking"
+    },
+    {
+      "id": "society",
+      "label": "Society",
+      "value": "society"
     }
   ],
   "past_event_galleries": [
     {
-      "id": "past-welcome-2026",
-      "slug": "semester-one-welcome-social-2026",
-      "title": "Semester One Welcome Social",
-      "description": "A relaxed start to the semester with games, snacks and new connections.",
-      "date": "12 Mar 2026",
+      "id": "ev1",
+      "title": "StatSoc Speed Friendly ",
+      "description": "Meet fellow statistics and data science students over snacks, games and a relaxed evening on campus. Most importantly, make new friends!!!",
+      "date": "30 Oct 2026",
       "tag": "Social",
-      "attendees": "48",
+      "slug": "statsoc-speed-friendly-2026",
+      "attendees": "",
       "photos": [
         {
-          "id": "welcome-1",
-          "src": "/events/illustrations/social-gathering.svg",
-          "alt": "Illustration of students meeting at the StatSoc welcome social",
+          "id": "speed-friendly-1",
+          "src": "/uploads/events/847858945_1504456644841569_3043628350883354851_n.jpg",
+          "alt": "StatSoc Speed Friendly event",
           "span": "wide"
-        },
-        {
-          "id": "welcome-2",
-          "src": "/events/illustrations/networking-coffee.svg",
-          "alt": "Illustration of students chatting and making connections",
-          "span": "square"
-        },
-        {
-          "id": "welcome-3",
-          "src": "/events/illustrations/student-collaboration.svg",
-          "alt": "Illustration of a lively campus gathering",
-          "span": "tall"
-        },
-        {
-          "id": "welcome-4",
-          "src": "/events/illustrations/stats-challenge.svg",
-          "alt": "Illustration of students enjoying an activity together",
-          "span": "square"
-        },
-        {
-          "id": "welcome-5",
-          "src": "/events/illustrations/social-gathering.svg",
-          "alt": "Illustration of a candid moment from the social",
-          "span": "square"
-        },
-        {
-          "id": "welcome-6",
-          "src": "/events/illustrations/networking-coffee.svg",
-          "alt": "Illustration of friends spending time together",
-          "span": "square"
-        }
-      ]
-    },
-    {
-      "id": "past-data-workshop-2026",
-      "slug": "data-visualisation-workshop-2026",
-      "title": "Data Visualisation Workshop",
-      "description": "An afternoon of practical data storytelling and visualisation.",
-      "date": "23 Apr 2026",
-      "tag": "Workshop",
-      "attendees": "32",
-      "photos": [
-        {
-          "id": "workshop-1",
-          "src": "/events/illustrations/workshop-data.svg",
-          "alt": "Illustration of students taking part in a data workshop",
-          "span": "wide"
-        },
-        {
-          "id": "workshop-2",
-          "src": "/events/illustrations/student-collaboration.svg",
-          "alt": "Illustration of a workshop in progress",
-          "span": "square"
-        },
-        {
-          "id": "workshop-3",
-          "src": "/events/illustrations/stats-challenge.svg",
-          "alt": "Illustration of students collaborating on an exercise",
-          "span": "tall"
-        },
-        {
-          "id": "workshop-4",
-          "src": "/events/illustrations/careers-panel.svg",
-          "alt": "Illustration of a presenter sharing ideas with students",
-          "span": "square"
-        },
-        {
-          "id": "workshop-5",
-          "src": "/events/illustrations/workshop-data.svg",
-          "alt": "Illustration of participants discussing their work",
-          "span": "square"
-        },
-        {
-          "id": "workshop-6",
-          "src": "/events/illustrations/student-collaboration.svg",
-          "alt": "Illustration of a team working through a data challenge",
-          "span": "square"
-        }
-      ]
-    },
-    {
-      "id": "past-careers-panel-2026",
-      "slug": "analytics-careers-panel-2026",
-      "title": "Analytics Careers Panel",
-      "description": "Students met graduates working across analytics and data science.",
-      "date": "21 May 2026",
-      "tag": "Careers",
-      "attendees": "56",
-      "photos": [
-        {
-          "id": "careers-1",
-          "src": "/events/illustrations/careers-panel.svg",
-          "alt": "Illustration of panelists sharing career insights",
-          "span": "wide"
-        },
-        {
-          "id": "careers-2",
-          "src": "/events/illustrations/workshop-data.svg",
-          "alt": "Illustration of students listening to a careers discussion",
-          "span": "square"
-        },
-        {
-          "id": "careers-3",
-          "src": "/events/illustrations/networking-coffee.svg",
-          "alt": "Illustration of students connecting with industry guests",
-          "span": "tall"
-        },
-        {
-          "id": "careers-4",
-          "src": "/events/illustrations/student-collaboration.svg",
-          "alt": "Illustration of a small group discussing career pathways",
-          "span": "square"
-        },
-        {
-          "id": "careers-5",
-          "src": "/events/illustrations/social-gathering.svg",
-          "alt": "Illustration of networking after the panel",
-          "span": "square"
-        },
-        {
-          "id": "careers-6",
-          "src": "/events/illustrations/stats-challenge.svg",
-          "alt": "Illustration of guests and students meeting at the event",
-          "span": "square"
         }
       ]
     }

@@ -26,12 +26,13 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 shrink-0">
+        <Link to="/" className="flex items-center gap-2 shrink-0">
           <img
             src={header.logo}
             alt={header.logoAlt}
             className="block h-auto max-h-10 md:max-h-12 w-auto max-w-full object-contain self-center"
           />
+          <span className="text-lg font-extrabold text-secondary lg:text-xl">StatSoc</span>
         </Link>
 
         {/* Desktop Nav */}

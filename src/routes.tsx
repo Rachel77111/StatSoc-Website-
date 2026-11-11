@@ -3,6 +3,7 @@ import type { RouteObject } from 'react-router';
 
 import HomePage from './pages/index';
 import EventsPage from './pages/events';
+import EventDetailsPage from './pages/event-details';
 import PastEventPage from './pages/past-event';
 import OpportunitiesPage from './pages/opportunities';
 import MembershipPage from './pages/membership';
@@ -32,6 +33,10 @@ export const routes: RouteObject[] = [
   {
     path: '/events/past/:slug',
     element: <PastEventPage />,
+  },
+  {
+    path: '/events/upcoming/:id',
+    element: <EventDetailsPage />,
   },
   {
     path: '/opportunities',

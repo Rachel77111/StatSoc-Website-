@@ -1,6 +1,56 @@
 {
-  "heading": "StatSoc Fun",
-  "subheading": "We're preparing something exciting for the StatSoc community. Stay tuned!",
+  "heading": "Statistics, with a twist",
+  "subheading": "Big surprises hide in small numbers. Flip a fact, test your intuition and discover the playful side of statistics.",
   "image": "",
-  "imageAlt": ""
+  "imageAlt": "",
+  "facts": [
+    {
+      "id": "birthday",
+      "category": "Probability",
+      "question": "In a room of 23 people, is the chance of a shared birthday above or below 50%?",
+      "answer": "Just above 50% — about 50.7%! There are 253 pairs to compare. This assumes birthdays are independent and equally likely across 365 days, ignoring leap years."
+    },
+    {
+      "id": "coin",
+      "category": "Chance",
+      "question": "A fair coin lands heads five times in a row. Is tails more likely next?",
+      "answer": "No — it is still 50/50. Independent coin flips have no memory. Expecting tails to be “due” is called the gambler’s fallacy."
+    },
+    {
+      "id": "outlier",
+      "category": "Everyday stats",
+      "question": "One billionaire moves into a small town. Which changes more: mean wealth or median wealth?",
+      "answer": "The mean can rise dramatically because it includes every value. The median depends on the middle of the ordered values, so it is usually much less affected by a single extreme value."
+    },
+    {
+      "id": "correlation",
+      "category": "Data detective",
+      "question": "Ice cream sales and sunburns rise together. Does ice cream cause sunburn?",
+      "answer": "The association alone cannot establish that. Hot, sunny weather can increase both ice cream sales and sun exposure — an example of a possible confounding factor."
+    },
+    {
+      "id": "shuffle",
+      "category": "Big numbers",
+      "question": "How many ways can you shuffle a standard 52-card deck?",
+      "answer": "52 factorial: about 8.07 × 10⁶⁷ possible orders. That’s a 68-digit number! Every position in the deck multiplies the possibilities."
+    },
+    {
+      "id": "zero",
+      "category": "Correlation",
+      "question": "If correlation is zero, does that mean two variables have no relationship?",
+      "answer": "Not necessarily! Pearson correlation measures linear association. A symmetric U-shaped relationship can have zero correlation even though there is a strong curved pattern."
+    },
+    {
+      "id": "sample",
+      "category": "Sampling",
+      "question": "Will a huge online poll always be more accurate than a small random sample?",
+      "answer": "No. A large sample can still be biased if the people who respond differ systematically from the population. More responses do not automatically fix selection bias."
+    },
+    {
+      "id": "dice",
+      "category": "Probability",
+      "question": "Roll two fair dice. Is a total of 7 more likely than a total of 2?",
+      "answer": "Yes — six times as likely. Six of the 36 equally likely ordered outcomes total 7; only one, (1, 1), totals 2."
+    }
+  ]
 }

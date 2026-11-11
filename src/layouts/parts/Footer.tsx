@@ -48,9 +48,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" aria-label="StatSoc home" className="flex items-center gap-3 mb-4">
+              <img src={content.header.logo} alt="" className="h-10 w-auto object-contain" />
               <span className="text-2xl font-extrabold" style={{ color: 'hsl(var(--primary))' }}>StatSoc</span>
-            </div>
+            </Link>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed mb-6">
               {footer.description}
             </p>

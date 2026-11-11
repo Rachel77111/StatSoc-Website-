@@ -50,8 +50,9 @@ const fallbackContent: EventsContent = {
 };
 
 /** Fetches the JSON document edited by Decap CMS; bundled content remains as fallback. */
-export function useEventsContent(): EventsContent {
+export function useEventsContentWithStatus(): { content: EventsContent; isLoading: boolean } {
   const [content, setContent] = useState<EventsContent>(fallbackContent);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const controller = new globalThis.AbortController();
@@ -70,10 +71,15 @@ export function useEventsContent(): EventsContent {
         if (error instanceof Error && error.name !== 'AbortError') {
           console.warn('Using bundled StatSoc event content:', error.message);
         }
-      });
+      })
+      .finally(() => { if (!controller.signal.aborted) setIsLoading(false); });
 
     return () => controller.abort();
   }, []);
 
-  return content;
+  return { content, isLoading };
+}
+
+export function useEventsContent(): EventsContent {
+  return useEventsContentWithStatus().content;
 }

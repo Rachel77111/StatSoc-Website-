@@ -9,8 +9,9 @@
       "tagline": "Sets the direction",
       "description": "Brings the team together and helps shape the society\u2019s direction.",
       "focus": "Leadership",
-      "name": "",
-      "image": ""
+      "name": "Ayas Bait Faraj",
+      "image": "/uploads/team/president.jpg",
+      "imagePosition": "top"
     },
     {
       "id": "vice-president",
@@ -19,8 +20,9 @@
       "tagline": "Connects the dots",
       "description": "Supports the president and helps the executive team turn ideas into action.",
       "focus": "Collaboration",
-      "name": "",
-      "image": ""
+      "name": "Lucienne Cao",
+      "image": "/uploads/team/vice-president.jpg",
+      "imagePosition": "top"
     },
     {
       "id": "treasurer",
@@ -29,8 +31,9 @@
       "tagline": "Makes it add up",
       "description": "Looks after budgets and helps the society make the most of its resources.",
       "focus": "Finance",
-      "name": "",
-      "image": ""
+      "name": "Daniel Ju",
+      "image": "/uploads/team/treasurer-web.jpg",
+      "imagePosition": "bottom"
     },
     {
       "id": "secretary",
@@ -40,7 +43,8 @@
       "description": "Keeps communication, records and society administration organised.",
       "focus": "Communication",
       "name": "",
-      "image": ""
+      "image": "",
+      "imagePosition": "center"
     },
     {
       "id": "events",
@@ -49,8 +53,9 @@
       "tagline": "Creates the moments",
       "description": "Plans experiences that bring our statistics community together.",
       "focus": "Experiences",
-      "name": "",
-      "image": ""
+      "name": "Soo Hee Yim",
+      "image": "/uploads/team/event-director.jpg",
+      "imagePosition": "center"
     },
     {
       "id": "brand-1",
@@ -59,8 +64,9 @@
       "tagline": "Gives StatSoc its voice",
       "description": "Shapes our visual identity and shares the stories behind the society.",
       "focus": "Creativity",
-      "name": "",
-      "image": ""
+      "name": "Joan Priscilia",
+      "image": "/uploads/team/brand-director-1-web.jpg",
+      "imagePosition": "center"
     },
     {
       "id": "brand-2",
@@ -69,8 +75,9 @@
       "tagline": "Gives StatSoc its voice",
       "description": "Shapes our visual identity and shares the stories behind the society.",
       "focus": "Creativity",
-      "name": "",
-      "image": ""
+      "name": "Inara Que",
+      "image": "/uploads/team/brand-director-2.jpg",
+      "imagePosition": "center 15%"
     },
     {
       "id": "sponsorship-1",
@@ -79,8 +86,9 @@
       "tagline": "Builds new connections",
       "description": "Develops relationships with partners and explores opportunities for members.",
       "focus": "Partnerships",
-      "name": "",
-      "image": ""
+      "name": "Cherryl Grover",
+      "image": "/uploads/team/sponsorship-director-1.jpeg",
+      "imagePosition": "top"
     },
     {
       "id": "sponsorship-2",
@@ -89,8 +97,9 @@
       "tagline": "Builds new connections",
       "description": "Develops relationships with partners and explores opportunities for members.",
       "focus": "Partnerships",
-      "name": "",
-      "image": ""
+      "name": "Rhea Kumar",
+      "image": "/uploads/team/sponsorship-director-2.jpg",
+      "imagePosition": "bottom"
     },
     {
       "id": "operations",
@@ -99,18 +108,20 @@
       "tagline": "Keeps things moving",
       "description": "Coordinates the practical details that help society activities run smoothly.",
       "focus": "Coordination",
-      "name": "",
-      "image": ""
+      "name": "Hui Qi Lau",
+      "image": "/uploads/team/operations-director-v2.jpg",
+      "imagePosition": "center"
     },
     {
       "id": "data",
-      "title": "Data Analytic Director",
+      "title": "Data Analytics Director",
       "group": "directors",
       "tagline": "Finds the story in data",
       "description": "Explores data and insights to help inform the society\u2019s decisions.",
       "focus": "Insights",
-      "name": "",
-      "image": ""
+      "name": "Shirley Ha",
+      "image": "/uploads/team/data-analytics-director.jpg",
+      "imagePosition": "top"
     }
   ]
 }

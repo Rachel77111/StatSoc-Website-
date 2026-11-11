@@ -5,6 +5,7 @@ import { Calendar, Clock, MapPin, ChevronLeft, ChevronRight, Images } from 'luci
 import { Link } from 'react-router';
 import { useEventsContent } from '@/lib/use-events-content';
 import { getEventCategory } from '@/lib/event-category';
+import { eventDetailsPath, eventRegistrationUrl } from '@/lib/event-links';
 
 
 const tagColours: Record<string, { bg: string; text: string }> = {
@@ -173,12 +174,13 @@ export default function EventsPage() {
                 aria-label="Upcoming events"
               >
                 {filteredEvents.map((event, i) => {
+                  const registrationUrl = eventRegistrationUrl(event.registrationUrl);
                   const colours = tagColours[event.tag] ?? tagColours.Networking;
                   const imgSrc = event.image ?? eventImages[event.id] ?? `/airo-assets/images/pages/home/event-${(i % 3) + 1}`;
                   return (
                     <motion.article
                       key={event.id}
-                      className="group w-[min(84vw,350px)] shrink-0 snap-start overflow-hidden rounded-3xl border border-border bg-white shadow-sm"
+                      className="group relative flex w-[min(84vw,350px)] shrink-0 snap-start flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-sm"
                       initial={{ opacity: 0, y: 22 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.2 }}
@@ -207,12 +209,16 @@ export default function EventsPage() {
                           </span>
                         )}
                       </div>
-                      <div className="p-5">
-                        <h3 className="mb-2 text-lg font-extrabold leading-snug text-secondary">{event.title}</h3>
+                      <div className="flex flex-1 flex-col p-5">
+                        <h3 className="mb-2 text-lg font-extrabold leading-snug text-secondary"><Link to={eventDetailsPath(event.id)} className="after:absolute after:inset-0 after:rounded-3xl focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary">{event.title}</Link></h3>
                         <p className="mb-5 line-clamp-2 min-h-10 text-sm leading-relaxed text-muted-foreground">{event.description}</p>
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-4 text-xs font-medium text-muted-foreground">
                           <span className="inline-flex items-center gap-1.5"><Clock size={13} />{event.time}</span>
                           <span className="inline-flex min-w-0 items-center gap-1.5"><MapPin size={13} className="shrink-0" /><span className="truncate">{event.location}</span></span>
+                        </div>
+                        <div className="mt-auto flex items-center justify-between gap-3 pt-5">
+                          <span aria-hidden="true" className="text-xs font-bold text-secondary">View details →</span>
+                          {registrationUrl && <a href={registrationUrl} target="_blank" rel="noopener noreferrer" aria-label={`Register for ${event.title} (opens in a new tab)`} className="relative z-10 rounded-full bg-primary px-4 py-2 text-xs font-bold text-secondary transition-colors hover:bg-secondary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Register ↗</a>}
                         </div>
                       </div>
                     </motion.article>

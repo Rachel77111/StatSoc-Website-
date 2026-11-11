@@ -44,13 +44,17 @@ collections:
               - { label: ID, name: id, widget: string, hint: Keep this unique; it links to the matching event gallery if used. }
               - { label: Event title, name: title, widget: string }
               - { label: Description, name: description, widget: text }
+              - { label: Full event details, name: details, widget: text, required: false, hint: Shown on the event details page. Use blank lines to separate paragraphs. }
+              - { label: Event highlights, name: highlights, widget: list, required: false, field: { label: Highlight, name: highlight, widget: string } }
+              - { label: Price or admission, name: price, widget: string, required: false, hint: 'For example: Free for members or $15 per person.' }
+              - { label: Registration link, name: registrationUrl, widget: string, required: false, pattern: ['^https?://[^\s]+$', 'Enter a complete http:// or https:// URL.'], hint: Shown as a Register button on the card and event details page. Leave blank if registration is not open. }
               - { label: Date, name: date, widget: string, hint: "Example: 18 Nov 2026" }
               - { label: Time, name: time, widget: string }
               - { label: Location, name: location, widget: string }
               - label: Category
                 name: tag
                 widget: select
-                options: [Social, Workshop, Careers, Networking, Competition, Panel]
+                options: [Social, Workshop, Careers, Networking, Competition, Panel, Society]
                 hint: Controls both the event badge and its category filter.
               - { label: Feature this event, name: featured, widget: boolean, default: false }
               - { label: Card image, name: image, widget: image, required: false }
@@ -68,7 +72,7 @@ collections:
               - label: Category tag
                 name: tag
                 widget: select
-                options: [Social, Workshop, Careers, Networking, Competition, Panel]
+                options: [Social, Workshop, Careers, Networking, Competition, Panel, Society]
           - label: Past event photo galleries
             name: past_event_galleries
             widget: list
@@ -82,7 +86,7 @@ collections:
               - label: Category tag
                 name: tag
                 widget: select
-                options: [Social, Workshop, Careers, Networking, Competition, Panel]
+                options: [Social, Workshop, Careers, Networking, Competition, Panel, Society]
               - { label: Approx. attendees, name: attendees, widget: string, required: false }
               - label: Photos
                 name: photos
@@ -191,6 +195,7 @@ collections:
               - { label: Group, name: group, widget: select, options: [big-four, directors] }
               - { label: Member name or names, name: name, widget: string, required: false }
               - { label: Photo, name: image, widget: image, required: false }
+              - { label: Photo framing, name: imagePosition, widget: select, options: [top, center, bottom], default: center, required: false }
               - { label: Short tagline, name: tagline, widget: string }
               - { label: Role description, name: description, widget: text }
               - { label: Focus label, name: focus, widget: string }
@@ -330,6 +335,21 @@ collections:
             summary: '{{fields.title}}'
             fields:
               - { label: Title, name: title, widget: string }
+              - { label: Category, name: category, widget: select, options: [Careers, Research, Scholarships, Competitions], required: false }
+              - { label: Listing type, name: kind, widget: string, required: false, hint: 'For example: Scholarship, Jobs portal, Research directory.' }
+              - { label: Closing date, name: closesOn, widget: datetime, required: false, format: 'YYYY-MM-DD', date_format: 'DD/MM/YYYY', time_format: false, hint: 'Automatically becomes closed after this day ends in Sydney. Leave blank for ongoing resources.' }
+              - { label: Other date information, name: timing, widget: string, required: false }
+              - { label: Eligibility summary, name: eligibility, widget: text, required: false }
+              - { label: Source checked date, name: checkedOn, widget: string, required: false, hint: 'Use YYYY-MM-DD after checking the official source.' }
+              - label: Availability status
+                name: status
+                widget: select
+                default: available
+                options:
+                  - { label: Upcoming (featured), value: upcoming }
+                  - { label: Available (open now), value: available }
+                  - { label: Closed (unavailable), value: closed }
+                hint: Only upcoming opportunities receive the Featured badge. A past closing date overrides this status automatically.
               - { label: Description, name: description, widget: text }
               - { label: Link text, name: button, widget: string }
               - { label: Link, name: href, widget: string }
@@ -344,6 +364,17 @@ collections:
           - { label: Text, name: subheading, widget: text }
           - { label: Optional image, name: image, widget: image, required: false, media_folder: public/uploads/site, public_folder: /uploads/site }
           - { label: Image description, name: imageAlt, widget: string, required: false }
+          - label: Fun fact flashcards
+            name: facts
+            widget: list
+            required: false
+            summary: '{{fields.question}}'
+            fields:
+              - { label: Unique ID, name: id, widget: string }
+              - { label: Category, name: category, widget: string, required: false }
+              - { label: Question (front), name: question, widget: text }
+              - { label: Answer (back), name: answer, widget: text }
+
 
       - name: global
         label: Navigation and footer

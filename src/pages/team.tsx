@@ -28,7 +28,7 @@ export default function TeamPage() {
     initial: reduceMotion ? false as const : { opacity: 0, y: 18 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.12 },
-    transition: { duration: reduceMotion ? 0 : 0.45, delay: reduceMotion ? 0 : delay },
+    transition: { duration: reduceMotion ? 0 : 0.25, delay: reduceMotion ? 0 : delay },
   });
 
   return (
@@ -82,10 +82,10 @@ export default function TeamPage() {
                 <div><h2 id={`${group}-heading`} className="text-3xl font-bold sm:text-4xl">{group === 'big-four' ? 'The Big Four' : 'Our Directors'}</h2><p className="mt-3 max-w-xl text-secondary/65">{group === 'big-four' ? 'The leadership roles that keep our society connected, organised and looking ahead.' : 'The portfolios that turn ideas into experiences, connections and insights.'}</p></div>
               </div>
               <div className={`grid gap-5 sm:grid-cols-2 ${group === 'big-four' ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
-                {content.roles.filter(role => role.group === group).map((role, index) => (
-                  <motion.article whileHover={reduceMotion ? undefined : { y: -5 }} key={role.id} initial={reduceMotion ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: reduceMotion ? 0 : 0.35, delay: reduceMotion ? 0 : index * 0.04 }} className="group overflow-hidden rounded-2xl border border-secondary/10 bg-white transition-shadow hover:shadow-xl focus-within:shadow-xl">
+                {content.roles.filter(role => role.group === group).map((role) => (
+                  <article key={role.id} className="group overflow-hidden rounded-2xl border border-secondary/10 bg-white transition-[transform,box-shadow] duration-200 motion-safe:hover:-translate-y-1 hover:shadow-md focus-within:shadow-md">
                     <div className={`relative flex aspect-[5/4] items-center justify-center overflow-hidden ${group === 'big-four' ? 'bg-[#f7df86]' : 'bg-[#dedfea]'}`}>
-                      {role.image ? <img src={role.image} alt={role.name || role.title} className="h-full w-full object-cover" /> : <>
+                      {role.image ? <img src={role.image} alt={role.name || role.title} loading="lazy" decoding="async" className="h-full w-full object-cover" style={{ objectPosition: role.imagePosition || 'center' }} /> : <>
                         <div aria-hidden="true" className="absolute h-40 w-40 rounded-full border border-secondary/15 transition-transform duration-500 motion-safe:group-hover:scale-125" />
                         <div aria-hidden="true" className="absolute h-28 w-28 rotate-45 rounded-3xl border border-secondary/15" />
                         <span aria-hidden="true" className="text-6xl font-bold tracking-tighter text-secondary/80">{role.title.split(' ').map(word => word[0]).join('')}</span>
@@ -101,7 +101,7 @@ export default function TeamPage() {
                         <p className="mt-4 text-sm leading-relaxed text-secondary/70">{role.description}</p>
                       </details>
                     </div>
-                  </motion.article>
+                  </article>
                 ))}
               </div>
             </section>

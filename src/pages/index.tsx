@@ -4,6 +4,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView } from 'motion/react';
 import { ArrowDown, ChevronRight, Calendar, Briefcase, Sparkles, Users } from 'lucide-react';
 import { useEventsContent } from '@/lib/use-events-content';
+import { eventDetailsPath, eventRegistrationUrl } from '@/lib/event-links';
 import homeContent from '../../content/home.json';
 import { useCmsContent } from '@/lib/use-cms-content';
 import ScatterDots from '@/components/ScatterDots';
@@ -67,7 +68,7 @@ function SplashScreen({ onScrollPast, tagline, taglineScrollLabel }: { onScrollP
         transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
 
-      {/* Logo placeholder */}
+      {/* StatSoc logo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -75,7 +76,7 @@ function SplashScreen({ onScrollPast, tagline, taglineScrollLabel }: { onScrollP
         className="mb-6"
       >
         <img
-          src="/airo-assets/images/logo/horizontal"
+          src="/uploads/site/statsoc-logo-transparent.png"
           alt="StatSoc Logo"
           className="h-16 w-auto object-contain"
         />
@@ -438,7 +439,7 @@ export default function HomePage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {upcomingEvents.map((event, i) => (
                   <FadeInSection key={event.id} delay={i * 0.07}>
-                    <Link to="/events" className="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                    <div className="relative rounded-2xl">
                       <motion.article
                         className="group flex min-h-36 overflow-hidden rounded-2xl border border-border/70 bg-white shadow-sm transition-shadow"
                         whileHover={{ y: -3, boxShadow: '0 12px 30px hsl(var(--secondary)/0.12)' }}
@@ -468,14 +469,15 @@ export default function HomePage() {
                               {event.tag}
                             </span>
                           </div>
-                          <h3 className="mb-1.5 line-clamp-1 font-extrabold text-secondary sm:text-lg">{event.title}</h3>
+                          <h3 className="mb-1.5 line-clamp-1 font-extrabold text-secondary sm:text-lg"><Link to={eventDetailsPath(event.id)} className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary">{event.title}</Link></h3>
                           <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">{event.description}</p>
                           <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-secondary transition-colors group-hover:text-primary">
                             {home.events.detailsLabel} <ChevronRight size={14} />
                           </span>
+                          {eventRegistrationUrl(event.registrationUrl) && <a href={eventRegistrationUrl(event.registrationUrl)!} target="_blank" rel="noopener noreferrer" aria-label={`Register for ${event.title} (opens in a new tab)`} className="relative z-10 mt-3 inline-flex w-fit items-center gap-1 rounded-full bg-primary px-3 py-1.5 text-xs font-bold text-secondary hover:bg-secondary hover:text-white">Register ↗</a>}
                         </div>
                       </motion.article>
-                    </Link>
+                    </div>
                   </FadeInSection>
                 ))}
               </div>

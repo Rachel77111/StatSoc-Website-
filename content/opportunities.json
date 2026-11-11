@@ -1,6 +1,56 @@
 {
   "heading": "Explore Opportunities",
-  "subheading": "Discover internships, graduate roles, scholarships, research opportunities and career development resources in statistics and data science.",
+  "subheading": "Explore University of Sydney scholarships, research pathways and career resources for students interested in statistics and data science.",
   "icon": "🚀",
-  "items": []
+  "items": [
+    {
+      "title": "K E Bullen Scholarships",
+      "category": "Scholarships",
+      "kind": "Scholarship",
+      "status": "available",
+      "description": "$7,500 honours scholarships for eligible students in applied mathematics, financial mathematics and statistics, statistics or data science. Specified undergraduate units are required; Scholarship II is for female students. Scholarship I hardship documents are due to UAC by 29 January 2027.",
+      "timing": "Applications close 14 February 2027",
+      "eligibility": "Eligible full-time USyd honours students; domestic and international",
+      "button": "Check eligibility and apply",
+      "href": "https://www.sydney.edu.au/scholarships/d/k-e-bullen-scholarships.html",
+      "checkedOn": "2026-10-23",
+      "closesOn": "2027-02-14"
+    },
+    {
+      "title": "Sydney CareerHub: internships and graduate jobs",
+      "category": "Careers",
+      "kind": "Jobs portal",
+      "status": "available",
+      "description": "Search employer-advertised internships, vacation work, graduate positions and part-time jobs through the University’s careers portal. Try statistics, analytics or data science keywords. Individual vacancies and deadlines are listed inside CareerHub; this card is a portal rather than a specific job offer.",
+      "timing": "Ongoing resource · vacancy deadlines vary",
+      "eligibility": "CareerHub access may require your University login",
+      "button": "Find jobs through USyd",
+      "href": "https://www.sydney.edu.au/careers/students/finding-jobs/how-to-find-a-job.html",
+      "checkedOn": "2026-10-23"
+    },
+    {
+      "title": "Career skills workshops and careers appointments",
+      "category": "Careers",
+      "kind": "Career support",
+      "status": "available",
+      "description": "Use the Careers Centre’s workshop listings and appointment booking links to plan your next step. Get support with preparing applications, exploring career directions and developing your job search skills. Check CareerHub for session dates and booking availability.",
+      "timing": "Ongoing resource · bookings depend on availability",
+      "eligibility": "Check Careers Centre access and booking requirements",
+      "button": "Explore careers support",
+      "href": "https://www.sydney.edu.au/careers/students/career-advice-and-development.html",
+      "checkedOn": "2026-10-23"
+    },
+    {
+      "title": "Explore mathematics and statistics research",
+      "category": "Research",
+      "kind": "Research directory",
+      "status": "available",
+      "description": "Explore USyd research groups and academics working in computational statistics, machine learning, probability and related areas. Use the directory to identify research interests and potential contacts. This is a research pathway resource; it does not advertise a guaranteed funded vacancy.",
+      "timing": "Ongoing resource · contact researchers about projects",
+      "eligibility": "Project entry and supervision requirements vary",
+      "button": "Meet the research groups",
+      "href": "https://www.sydney.edu.au/science/schools/school-of-mathematics-and-statistics/research.html",
+      "checkedOn": "2026-10-23"
+    }
+  ]
 }
